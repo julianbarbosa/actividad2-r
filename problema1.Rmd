@@ -1,0 +1,178 @@
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<h1>Problema 1</h1>
+
+<h2>Teorema del Límite Central</h2>
+
+<span>
+El Teorema del Límite Central es uno de los más importantes en la inferencia estadística y habla sobre la convergencia de los estimadores como la proporción muestral a la distribución normal. Algunos autores afirman que esta aproximación es bastante buena a partir del umbral n>30.
+
+A continuación se describen los siguientes pasos para su verificación:
+
+<hr>
+
+<strong>a.</strong> Realice una simulación en la cual genere una población de N=1000
+ (Lote), donde el porcentaje de individuos (supongamos plantas) enfermas sea del 50%.
+</span>
+
+
+```{r}
+poblacion1 <- sample(c(0, 1), 1000, replace = TRUE, prob = c(0.5, 0.5))
+poblacion1
+
+
+```
+
+```{r}
+summary(poblacion1)
+```
+
+
+```{r}
+plot(poblacion1,type="h",xlab="k",ylab="P(X=k)",main="Función de Probabilidad B(10,0.6)")
+```
+
+<hr>
+
+<strong>b.</strong> Genere una función que permita:
+- Obtener una muestra aleatoria de la población y
+
+
+```{r}
+numeroAleatorio1 <- runif(1, 100, 1000);
+numeroAleatorio1
+muestraAleatoria1 <- sample(poblacion1, numeroAleatorio1, replace = FALSE)
+muestraAleatoria1
+```
+
+- Calcule el estimador de la proporción muestral pˆ para un tamaño de muestra dado n.
+
+```{r}
+pEstimadorMuestraAleatoria1 <- sum(muestraAleatoria1 == 1) / length(muestraAleatoria1)
+pEstimadorMuestraAleatoria1
+```
+
+<hr>
+
+<strong>c.</strong> Repita el escenario anterior (b) n=500 veces y analice los resultados en cuanto al comportamiento de los 500
+ resultados del estimador pˆ. ¿Qué tan simétricos o sesgados son los resultados obtenidos? y ¿qué se puede observar en cuanto a la variabilidad?. Realice en su informe un comentario sobre los resultados obtenidos.
+ 
+```{r}
+poblacion2 <- sample(c(0, 1), 500, replace = TRUE, prob = c(0.5, 0.5))
+poblacion2
+```
+
+<strong>Genere una función que permita:</strong>
+- Obtener una muestra aleatoria de la población y
+
+```{r}
+numeroAleatorio2 <- runif(1, 100, 500);
+numeroAleatorio2
+muestraAleatoria2 <- sample(poblacion2, numeroAleatorio2, replace = FALSE)
+muestraAleatoria2
+pEstimadorMuestraAleatoria2 <- sum(muestraAleatoria2 == 1) / length(muestraAleatoria2)
+pEstimadorMuestraAleatoria2
+```
+
+
+- Calcule el estimador de la proporción muestral pˆ para un tamaño de muestra dado n.
+
+```{r}
+pEstimadorMuestraAleatoria2 <- sum(muestraAleatoria2 == 1) / length(muestraAleatoria2)
+pEstimadorMuestraAleatoria2
+```
+
+¿Qué tan simétricos o sesgados son los resultados obtenidos? y ¿qué se puede observar en cuanto a la variabilidad?. Realice en su informe un comentario sobre los resultados obtenidos.
+
+<hr>
+
+<strong>d.</strong> Repita los puntos b y c para tamaños de muestra n=5, 10, 15, 20, 30, 50, 60, 100, 200, 500. Compare los resultados obtenidos para los diferentes tamaños de muestra en cuanto a la normalidad. Utilice pruebas de bondad y ajuste (shapiro wilks :shspiro.test()) y métodos gráficos (grafico de normalidad: qqnorm()). Comente ensu informe los resultados obtenidos
+
+```{r}
+
+tamanosMuestra = c(5, 10, 15, 20, 30, 50, 60, 100, 200, 500)
+tamanosMuestra
+
+for(tamanoMuestra in tamanosMuestra) {
+  cat("\n\nMuestra tamano: " , tamanoMuestra, '\n')
+  muestraAleatoria3 <- sample(poblacion2, tamanoMuestra, replace = FALSE)
+  cat(muestraAleatoria3)
+  pEstimadorMuestraAleatoria3 <- sum(muestraAleatoria3 == 1) / length(muestraAleatoria3)
+  cat("\nEstimador de la proporción muestral: ", pEstimadorMuestraAleatoria3)
+  
+}
+
+```
+
+<hr>
+
+<strong>e.</strong> Repita toda la simulación (puntos a – d), pero ahora para lotes con 10% de plantas enfermas y de nuevo para lotes con un 90% de plantas enfermas. Concluya sobre los resultados del ejercicio.
+
+<strong> Lotes con 10% de plantas enfermas</strong>
+
+```{r}
+poblacion10PorcientoEnferma <- sample(c(0, 1), 1000, replace = TRUE, prob = c(0.9, 0.1))
+poblacion10PorcientoEnferma
+
+numeroAleatorio2 <- runif(1, 100, 500);
+numeroAleatorio2
+muestraAleatoria2 <- sample(poblacion10PorcientoEnferma, numeroAleatorio2, replace = FALSE)
+muestraAleatoria2
+pEstimadorMuestraAleatoria2 <- sum(muestraAleatoria2 == 1) / length(muestraAleatoria2)
+pEstimadorMuestraAleatoria2
+
+pEstimadorMuestraAleatoria2 <- sum(muestraAleatoria2 == 1) / length(muestraAleatoria2)
+pEstimadorMuestraAleatoria2
+
+
+tamanosMuestra = c(5, 10, 15, 20, 30, 50, 60, 100, 200, 500)
+tamanosMuestra
+
+for(tamanoMuestra in tamanosMuestra) {
+  cat("\n\nMuestra tamano: " , tamanoMuestra, '\n')
+  muestraAleatoria3 <- sample(poblacion10PorcientoEnferma, tamanoMuestra, replace = FALSE)
+  cat(muestraAleatoria3)
+  pEstimadorMuestraAleatoria3 <- sum(muestraAleatoria3 == 1) / length(muestraAleatoria3)
+  cat("\nEstimador de la proporción muestral: ", pEstimadorMuestraAleatoria3)
+  
+}
+
+```
+
+
+<strong> Lotes con 90% de plantas enfermas</strong>
+
+```{r}
+poblacion90PorcientoEnferma <- sample(c(0, 1), 1000, replace = TRUE, prob = c(0.1, 0.9))
+poblacion90PorcientoEnferma
+
+numeroAleatorio2 <- runif(1, 100, 500);
+numeroAleatorio2
+muestraAleatoria2 <- sample(poblacion90PorcientoEnferma, numeroAleatorio2, replace = FALSE)
+muestraAleatoria2
+pEstimadorMuestraAleatoria2 <- sum(muestraAleatoria2 == 1) / length(muestraAleatoria2)
+pEstimadorMuestraAleatoria2
+
+pEstimadorMuestraAleatoria2 <- sum(muestraAleatoria2 == 1) / length(muestraAleatoria2)
+pEstimadorMuestraAleatoria2
+
+
+tamanosMuestra = c(5, 10, 15, 20, 30, 50, 60, 100, 200, 500)
+tamanosMuestra
+
+for(tamanoMuestra in tamanosMuestra) {
+  cat("\n\nMuestra tamano: " , tamanoMuestra, '\n')
+  muestraAleatoria3 <- sample(poblacion90PorcientoEnferma, tamanoMuestra, replace = FALSE)
+  cat(muestraAleatoria3)
+  pEstimadorMuestraAleatoria3 <- sum(muestraAleatoria3 == 1) / length(muestraAleatoria3)
+  cat("\nEstimador de la proporción muestral: ", pEstimadorMuestraAleatoria3)
+  
+}
+
+```
+
+
