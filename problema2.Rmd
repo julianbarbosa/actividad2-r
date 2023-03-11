@@ -1,0 +1,180 @@
+---
+title: "Métodos y Simulación estadística"
+subtile: "Comparación de tratamientos en ciencias agropecuarias"
+output: 
+  flexdashboard::flex_dashboard:
+    theme:
+      bg: "#FFFFFF"
+      fg: "#034A94" 
+      primary: "#034A94" 
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r}
+library(flexdashboard)
+```
+
+<h1>Problema 2</h1>
+
+
+<h2>Validación de resultados</h2>
+
+
+<p>La comparación de tratamientos es una práctica fundamental en las ciencias agropecuarias y para ello a nivel estadístico se cuenta con herramientas para apoyar el proceso de toma de decisiones y así poder lograr concluir con un alto grado de confianza sobre los resultados observados en una muestra. A través de la simulación es posible evaluar estimadores y sus propiedades, que nos permitan usarlos con toda tranquilidad.</p>
+
+<p>Suponga un escenario en el cual se aplicó tratamientos diferentes a dos lotes de una misma plantas y se desea analizar si alguno de los dos tratamientos presenta un mejor desempeño en el control de una plaga presente en ambos al momento inicial. Para ello utilizará como criterio de desempeño el tratamiento, el menor porcentaje de plantas enfermas presente después de un tiempo de aplicación (es decir, si se presentan o no diferencias en las proporciones de enfermos p1 y p2 - proporciones poblacionales-).</p>
+
+Column {data-width=700 .tabset}
+-----------------------------------------------------------------------
+### a. Simulación
+<hr>
+<strong>a.</strong> Realice una simulación en la cual genere dos poblaciones de N1=1000 (Lote 1) y N2=1500 (Lote 2), para los cuales se asume que el porcentaje de individuos (plantas) enfermas en ambos lotes es del 10% (es decir, sin diferencias entre los tratamientos).
+
+
+```{r}
+set.seed(7)
+LoteUno <- sample(c(0, 1), 1000, replace = TRUE, prob = c(0.9, 0.1))
+LoteUno
+LoteDos <- sample(c(0, 1), 1500, replace = TRUE, prob = c(0.9, 0.1))
+LoteDos
+```
+<hr>
+### b. Muestras
+<strong>b.</strong> Genere una función que permita obtener una muestra aleatoria de los lotes y calcule el estimador de la proporción muestral para cada lote (p1ˆ y p2ˆ) para un tamaño de muestra dado n1=n2. Calcule la diferencia entre los estimadores (p1ˆ−p2ˆ).
+
+```{r}
+tamanoMuestra <- 300
+tamanoMuestra
+MuestraLoteUno <- sample(LoteUno, tamanoMuestra, replace = FALSE)
+MuestraLoteUno
+MuestraLoteDos <- sample(LoteDos, tamanoMuestra, replace = FALSE)
+MuestraLoteDos
+pEstimadorMuestraUno <- sum(MuestraLoteUno == 1) / length(MuestraLoteUno)
+pEstimadorMuestraUno
+pEstimadorMuestraDos <- sum(MuestraLoteDos == 1) / length(MuestraLoteDos)
+pEstimadorMuestraDos
+diferenciaEntreEstimadorUnoDos <- pEstimadorMuestraUno - pEstimadorMuestraDos
+diferenciaEntreEstimadorUnoDos
+
+```
+
+<hr>
+### c. 500 veces (a) y (b)
+<strong>c.</strong> Repita el escenario anterior (b) 500 veces y analice los resultados en cuanto al comportamiento de los 500
+ estimadores (diferencias p1ˆ−p2ˆ). ¿Qué tan simétricos son los resultados?, ¿Son siempre cero las diferencias?
+
+
+```{r}
+tamanoMuestra <- 300
+tamanoMuestra
+columns = c("Uno", "Dos", "Diferencia") 
+tablaEstimadores = data.frame(matrix(nrow = 0, ncol = length(columns)))
+colnames(tablaEstimadores) = c("p Uno", "p Dos", "Diferencia")
+for(i in 1:500) {
+  MuestraLoteUno <- sample(LoteUno, tamanoMuestra, replace = FALSE)
+  MuestraLoteDos <- sample(LoteDos, tamanoMuestra, replace = FALSE)
+  pEstimadorMuestraUno <- sum(MuestraLoteUno == 1) / length(MuestraLoteUno)
+  pEstimadorMuestraDos <- sum(MuestraLoteDos == 1) / length(MuestraLoteDos)
+  diferenciaEntreEstimadorUnoDos <- pEstimadorMuestraUno - pEstimadorMuestraDos
+  row <- c(pEstimadorMuestraUno,pEstimadorMuestraDos,diferenciaEntreEstimadorUnoDos)
+  tablaEstimadores[nrow(tablaEstimadores)+1,]  = row
+}
+print(tablaEstimadores)
+
+CantidadDiferenciaEstimadoresEnCero = sum(tablaEstimadores$"Diferencia" == 0)
+CantidadDiferenciaEstimadoresEnCero
+
+```
+<hr>
+### d. (b) y (c) para muestas  
+<strong>d.</strong> Realice los puntos b y c para tamaños de muestra n1=n2=5, 10, 15, 20, 30, 50, 60, 100, 200, 500. Compare los resultados de los estimadores (p1ˆ−p2ˆ) en cuanto a la normalidad. También analice el comportamiento de las diferencias y evalúe. ¿Considera que es más probable concluir que existen diferencias entre los tratamientos con muestras grandes que pequeñas, es decir, cuál considera usted que es el efecto del tamaño de muestra en el caso de la comparación de proporciones?.
+
+
+```{r}
+tamanosMuestra = c(5, 10, 15, 20, 30, 50, 60, 100, 200, 500)
+tablaEstimadores = data.frame(matrix(nrow = 0, ncol = length(tamanosMuestra)))
+colnames(tablaEstimadores) = tamanosMuestra;
+
+for(i in 1:500) {
+  row = c();
+  for(t in 0:length(tamanosMuestra)) {
+    tamanosMuestra[t]
+    MuestraLoteUno <- sample(LoteUno, tamanoMuestra, replace = FALSE)
+    MuestraLoteDos <- sample(LoteDos, tamanoMuestra, replace = FALSE)
+    pEstimadorMuestraUno <- sum(MuestraLoteUno == 1) / length(MuestraLoteUno)
+    pEstimadorMuestraDos <- sum(MuestraLoteDos == 1) / length(MuestraLoteDos)
+    diferenciaEntreEstimadorUnoDos <- pEstimadorMuestraUno - pEstimadorMuestraDos
+    row[t] = diferenciaEntreEstimadorUnoDos
+    
+  }
+  tablaEstimadores[nrow(tablaEstimadores)+1,]  = row
+}
+print(tablaEstimadores)
+```
+
+<hr>
+
+<strong>e</strong>Ahora realice nuevamente los puntos a-d bajo un escenario con dos lotes, pero de proporciones de enfermos diferentes (p1=0.1 y p2=0.15), es decir, el tratamiento del lote 1 si presentó un mejor desempeño reduciendo en un 5% el porcentaje de enfermos. Bajo este nuevo escenario compare la distribución de estas diferencias (p1ˆ−p2ˆ) con las observadas bajo igualdad de condiciones en los lotes. ¿Qué puede concluir? ¿Existen puntos en los cuales es posible que se observen diferencias de p1−p2 bajo ambos escenarios (escenario 1: sin diferencias entre p1  y p2, escenario 2: diferencia de 5%)?
+
+```{r}
+
+LoteUno <- sample(c(0, 1), 1000, replace = TRUE, prob = c(0.9, 0.1))
+LoteUno
+LoteDos <- sample(c(0, 1), 1500, replace = TRUE, prob = c(0.85, 0.15))
+LoteDos
+
+tamanoMuestra <- 300
+tamanoMuestra
+MuestraLoteUno <- sample(LoteUno, tamanoMuestra, replace = FALSE)
+MuestraLoteUno
+MuestraLoteDos <- sample(LoteDos, tamanoMuestra, replace = FALSE)
+MuestraLoteDos
+pEstimadorMuestraUno <- sum(MuestraLoteUno == 1) / length(MuestraLoteUno)
+pEstimadorMuestraUno
+pEstimadorMuestraDos <- sum(MuestraLoteDos == 1) / length(MuestraLoteDos)
+pEstimadorMuestraDos
+diferenciaEntreEstimadorUnoDos <- pEstimadorMuestraUno - pEstimadorMuestraDos
+diferenciaEntreEstimadorUnoDos
+
+tamanoMuestra <- 300
+tamanoMuestra
+columns = c("Uno", "Dos", "Diferencia") 
+tablaEstimadores = data.frame(matrix(nrow = 0, ncol = length(columns)))
+colnames(tablaEstimadores) = c("p Uno", "p Dos", "Diferencia")
+for(i in 1:500) {
+  MuestraLoteUno <- sample(LoteUno, tamanoMuestra, replace = FALSE)
+  MuestraLoteDos <- sample(LoteDos, tamanoMuestra, replace = FALSE)
+  pEstimadorMuestraUno <- sum(MuestraLoteUno == 1) / length(MuestraLoteUno)
+  pEstimadorMuestraDos <- sum(MuestraLoteDos == 1) / length(MuestraLoteDos)
+  diferenciaEntreEstimadorUnoDos <- pEstimadorMuestraUno - pEstimadorMuestraDos
+  row <- c(pEstimadorMuestraUno,pEstimadorMuestraDos,diferenciaEntreEstimadorUnoDos)
+  tablaEstimadores[nrow(tablaEstimadores)+1,]  = row
+}
+print(tablaEstimadores)
+
+CantidadDiferenciaEstimadoresEnCero = sum(tablaEstimadores$"Diferencia" == 0)
+CantidadDiferenciaEstimadoresEnCero
+
+tamanosMuestra = c(5, 10, 15, 20, 30, 50, 60, 100, 200, 500)
+tablaEstimadores = data.frame(matrix(nrow = 0, ncol = length(tamanosMuestra)))
+colnames(tablaEstimadores) = tamanosMuestra;
+
+for(i in 1:500) {
+  row = c();
+  for(t in 0:length(tamanosMuestra)) {
+    tamanosMuestra[t]
+    MuestraLoteUno <- sample(LoteUno, tamanoMuestra, replace = FALSE)
+    MuestraLoteDos <- sample(LoteDos, tamanoMuestra, replace = FALSE)
+    pEstimadorMuestraUno <- sum(MuestraLoteUno == 1) / length(MuestraLoteUno)
+    pEstimadorMuestraDos <- sum(MuestraLoteDos == 1) / length(MuestraLoteDos)
+    diferenciaEntreEstimadorUnoDos <- pEstimadorMuestraUno - pEstimadorMuestraDos
+    row[t] = diferenciaEntreEstimadorUnoDos
+    
+  }
+  tablaEstimadores[nrow(tablaEstimadores)+1,]  = row
+}
+print(tablaEstimadores)
+
+```
+

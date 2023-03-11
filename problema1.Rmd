@@ -1,4 +1,15 @@
-
+---
+title: "Métodos y Simulación estadística"
+subtile: "Teorema del Límite Central"
+output: 
+  flexdashboard::flex_dashboard:
+    theme:
+      bg: "#FFFFFF"
+      fg: "#034A94" 
+      primary: "#034A94" 
+    orientation: columns
+    vertical_layout: fill
+---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -15,6 +26,9 @@ A continuación se describen los siguientes pasos para su verificación:
 
 <hr>
 
+Column {data-width=700 .tabset}
+-----------------------------------------------------------------------
+### a. Simulación
 <strong>a.</strong> Realice una simulación en la cual genere una población de N=1000
  (Lote), donde el porcentaje de individuos (supongamos plantas) enfermas sea del 50%.
 </span>
@@ -31,13 +45,8 @@ poblacion1
 summary(poblacion1)
 ```
 
-
-```{r}
-plot(poblacion1,type="h",xlab="k",ylab="P(X=k)",main="Función de Probabilidad B(10,0.6)")
-```
-
 <hr>
-
+### b. Muestras
 <strong>b.</strong> Genere una función que permita:
 - Obtener una muestra aleatoria de la población y
 
@@ -57,7 +66,7 @@ pEstimadorMuestraAleatoria1
 ```
 
 <hr>
-
+### c. 500 veces (b)
 <strong>c.</strong> Repita el escenario anterior (b) n=500 veces y analice los resultados en cuanto al comportamiento de los 500
  resultados del estimador pˆ. ¿Qué tan simétricos o sesgados son los resultados obtenidos? y ¿qué se puede observar en cuanto a la variabilidad?. Realice en su informe un comentario sobre los resultados obtenidos.
  
@@ -89,7 +98,7 @@ pEstimadorMuestraAleatoria2
 ¿Qué tan simétricos o sesgados son los resultados obtenidos? y ¿qué se puede observar en cuanto a la variabilidad?. Realice en su informe un comentario sobre los resultados obtenidos.
 
 <hr>
-
+### c. Repetición (b) y (c) tamaño muestra
 <strong>d.</strong> Repita los puntos b y c para tamaños de muestra n=5, 10, 15, 20, 30, 50, 60, 100, 200, 500. Compare los resultados obtenidos para los diferentes tamaños de muestra en cuanto a la normalidad. Utilice pruebas de bondad y ajuste (shapiro wilks :shspiro.test()) y métodos gráficos (grafico de normalidad: qqnorm()). Comente ensu informe los resultados obtenidos
 
 ```{r}
