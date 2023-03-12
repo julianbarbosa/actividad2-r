@@ -2729,42 +2729,42 @@ población de N=1000 (Lote), donde el porcentaje de individuos
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>poblacion1 <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="dv">1000</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.5</span>))</span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>poblacion1 <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">1000</span><span class="sc">*</span><span class="fl">0.5</span>), <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">1000</span><span class="sc">*</span><span class="fl">0.5</span>)))</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>poblacion1</span></code></pre></div>
-<pre><code>   [1] 1 1 0 0 1 1 0 1 0 1 0 1 1 1 1 0 0 0 1 0 0 0 1 1 0 0 1 1 0 1 1 1 1 1 1 0 1
-  [38] 0 1 1 0 0 0 1 1 0 0 1 1 0 0 0 0 0 0 1 1 0 1 0 0 0 0 1 1 1 1 0 0 0 0 0 1 0
-  [75] 1 1 1 1 0 0 0 0 0 0 1 0 1 1 0 1 0 1 1 1 1 1 1 1 0 1 0 1 1 1 1 1 1 1 0 1 0
- [112] 0 0 1 0 1 0 0 0 0 0 0 0 0 1 0 1 0 1 0 1 0 0 1 1 0 0 1 1 1 1 1 0 0 0 0 0 0
- [149] 0 1 0 0 1 1 1 1 1 1 0 1 0 1 0 1 0 0 1 0 1 0 1 0 0 0 1 1 0 1 0 0 0 0 0 0 1
- [186] 0 0 0 0 0 1 0 1 0 1 1 1 0 0 1 0 0 0 1 0 0 1 1 0 0 0 0 1 1 1 1 0 0 1 1 0 0
- [223] 1 0 0 0 0 1 1 1 0 0 0 1 0 0 0 0 1 1 0 0 1 1 1 0 1 1 1 1 1 0 1 0 0 0 0 1 0
- [260] 1 0 0 1 1 0 0 0 1 1 0 1 0 1 0 1 0 1 1 1 0 1 1 0 0 0 1 1 1 1 1 0 1 0 0 1 0
- [297] 0 0 1 1 1 1 0 0 0 1 1 0 0 1 0 0 1 0 0 1 0 0 1 0 0 1 1 0 1 0 0 1 1 0 0 1 0
- [334] 1 1 0 1 0 0 1 1 0 1 1 0 0 1 0 0 1 0 0 1 1 0 1 0 1 1 1 1 0 0 0 1 1 1 0 1 0
- [371] 0 1 1 1 0 0 1 1 0 1 0 1 1 1 1 0 1 1 1 1 0 1 0 1 1 1 0 0 1 0 0 0 0 1 0 1 1
- [408] 1 1 1 1 1 1 0 1 1 0 0 1 0 0 0 0 1 1 1 1 1 0 0 0 0 1 0 0 0 0 0 0 1 0 1 1 1
- [445] 1 0 0 0 0 0 1 0 1 0 1 0 0 0 1 0 0 0 1 1 1 1 1 0 1 0 1 1 0 1 1 1 1 1 0 0 0
- [482] 0 0 0 1 0 0 0 1 1 1 0 1 0 1 1 0 1 1 0 0 0 1 1 0 0 1 0 0 1 0 1 1 0 1 0 0 1
- [519] 0 0 1 0 0 0 0 0 0 1 0 0 1 1 0 1 0 1 0 1 1 0 0 0 1 0 0 1 1 1 1 0 1 0 1 0 0
- [556] 0 0 0 0 1 1 1 0 1 0 1 1 0 0 0 0 1 0 0 0 1 1 0 0 1 1 1 1 0 1 0 1 1 1 1 1 1
- [593] 0 0 0 0 0 1 0 0 1 1 0 1 1 0 0 1 1 0 1 1 1 0 0 1 0 0 1 0 1 1 1 0 0 1 0 1 1
- [630] 1 1 1 1 0 1 1 0 1 1 0 0 1 0 1 1 1 0 1 0 0 1 1 0 0 0 0 0 1 1 0 1 1 0 1 0 0
- [667] 0 0 0 0 0 0 1 0 1 0 1 0 0 1 0 1 1 0 1 0 0 0 0 1 0 0 1 0 0 0 1 0 1 0 0 1 1
- [704] 1 1 0 0 1 0 1 1 1 1 0 1 0 0 1 1 0 1 0 0 0 0 0 1 0 0 1 1 0 1 0 0 0 0 1 0 0
- [741] 1 1 0 1 1 0 1 1 0 0 1 1 1 1 0 1 0 1 1 0 1 1 1 0 0 1 0 0 1 1 1 0 1 1 1 0 1
- [778] 0 1 0 1 1 1 0 0 0 1 0 1 1 1 0 1 0 1 1 1 1 0 0 0 1 0 0 0 1 1 0 0 1 0 0 0 1
- [815] 0 0 1 1 0 0 1 0 1 1 0 0 0 1 1 0 0 0 1 0 1 0 1 0 0 0 1 0 1 1 0 0 0 1 1 1 1
- [852] 1 0 1 1 0 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 0 0 0 1 1 1 0 1 0 0 1 0 1 1 1 0 1
- [889] 1 1 0 1 1 0 0 1 1 0 1 1 0 1 1 1 0 1 1 1 1 1 1 0 1 0 1 0 1 1 0 1 1 1 1 0 1
- [926] 0 0 1 1 1 0 0 0 0 1 0 0 0 1 0 0 0 0 1 1 0 0 1 1 0 0 1 1 1 0 1 0 0 0 0 1 0
- [963] 1 0 0 0 1 1 1 1 1 0 0 1 1 1 0 0 1 1 1 1 1 1 1 0 1 1 1 0 1 0 1 1 0 0 0 0 0
-[1000] 0</code></pre>
+<pre><code>   [1] 1 1 1 1 0 0 0 1 0 1 0 1 1 1 1 0 0 1 1 0 0 0 1 1 1 1 1 1 0 0 0 0 1 1 0 0 0
+  [38] 1 1 1 0 0 1 1 1 0 0 0 1 0 1 1 0 1 1 0 1 1 0 1 0 1 0 0 1 1 1 0 0 0 1 1 1 0
+  [75] 0 1 0 1 0 1 1 0 1 0 1 0 1 0 1 0 0 0 0 1 1 0 0 1 1 1 0 1 0 1 0 1 1 1 0 0 1
+ [112] 0 1 1 0 0 0 1 1 1 0 1 0 0 1 0 0 0 0 1 0 1 0 1 1 1 0 1 1 1 1 0 0 1 1 0 0 0
+ [149] 1 0 0 1 1 1 1 0 1 0 1 1 0 0 0 1 1 1 1 0 1 0 0 1 0 0 0 0 1 0 0 0 0 1 1 0 1
+ [186] 0 0 1 1 1 0 1 0 1 1 0 0 0 0 1 0 1 1 0 1 0 1 1 0 0 0 0 1 1 1 1 0 0 0 0 1 1
+ [223] 0 0 0 0 0 1 1 0 1 1 1 0 0 1 0 0 1 0 1 1 1 1 1 1 0 0 0 1 0 1 0 0 0 0 1 1 0
+ [260] 0 1 0 1 1 0 0 1 0 1 1 1 1 0 1 1 1 0 1 1 0 1 0 1 0 1 1 1 1 0 0 0 0 1 1 0 1
+ [297] 0 0 0 1 0 1 1 1 0 1 1 1 1 0 0 1 0 0 1 0 1 0 0 0 1 1 0 1 1 1 0 0 1 1 0 0 0
+ [334] 1 1 0 1 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 1 1 1 1 1 0 1 1 1 1 0 0 0 1 0 0
+ [371] 0 0 0 0 1 0 0 1 0 1 0 0 0 1 1 0 1 1 0 1 0 0 0 1 1 1 1 0 0 0 1 0 0 1 1 1 1
+ [408] 0 1 0 0 1 0 0 1 1 0 1 1 0 0 1 0 1 0 1 1 0 1 0 0 1 0 1 1 0 0 0 0 1 1 0 0 1
+ [445] 0 0 1 1 1 0 0 0 0 0 1 1 1 0 1 0 0 1 0 1 0 1 1 1 0 1 1 1 1 0 1 0 1 1 0 0 1
+ [482] 1 0 1 1 0 1 1 1 1 0 1 1 0 0 0 0 0 0 0 1 1 1 0 0 1 1 0 0 1 1 0 1 1 1 1 0 1
+ [519] 0 0 1 0 1 1 0 0 0 1 1 0 0 1 0 1 1 1 1 1 0 1 0 0 0 0 0 1 0 0 1 0 1 1 1 0 0
+ [556] 1 0 1 1 1 0 0 0 0 0 1 0 1 0 1 1 0 0 1 1 1 0 1 0 1 1 0 0 0 1 0 0 1 1 1 0 1
+ [593] 0 0 1 0 1 0 1 1 0 0 0 0 1 0 0 1 1 1 0 0 0 1 0 1 1 0 0 1 0 1 0 0 0 1 1 0 0
+ [630] 0 0 1 0 1 1 0 1 0 1 1 0 1 1 1 1 0 1 1 0 0 0 0 0 1 0 1 0 1 0 1 0 0 1 0 1 0
+ [667] 1 0 1 1 1 0 0 0 0 1 0 0 0 0 1 1 1 0 0 1 1 0 1 0 0 1 1 1 1 0 0 0 0 0 1 1 0
+ [704] 1 1 0 1 0 0 0 1 0 0 0 1 1 1 1 0 1 1 1 1 0 1 1 0 1 1 0 1 0 1 1 0 0 0 1 0 1
+ [741] 0 0 1 1 1 0 1 1 0 0 1 0 1 1 0 1 0 0 0 1 1 0 0 1 0 0 0 1 0 1 0 0 1 1 1 0 0
+ [778] 1 0 1 0 0 1 0 0 0 1 0 0 0 0 1 1 1 1 0 0 0 1 0 1 1 0 1 1 0 1 0 1 1 0 0 1 0
+ [815] 0 0 1 1 1 1 0 1 1 1 0 0 0 0 1 1 1 0 1 0 0 0 1 0 1 0 1 0 1 1 1 0 0 1 0 1 1
+ [852] 1 1 0 1 0 1 1 0 0 1 0 1 0 1 0 0 0 1 0 1 1 1 1 1 0 1 1 1 1 1 0 1 1 0 0 1 0
+ [889] 1 1 1 0 0 0 1 1 0 0 1 0 1 0 0 1 1 1 0 1 1 0 0 0 1 1 1 0 0 1 0 1 0 1 0 1 0
+ [926] 1 0 0 0 1 0 1 0 1 0 1 0 0 0 1 1 0 0 1 0 1 0 0 0 1 1 1 0 0 1 0 0 0 0 0 1 1
+ [963] 0 1 1 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 0 1 0 1 1 0 1 0 0 0 0 1 0 0 0 0 0 1 0
+[1000] 1</code></pre>
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(poblacion1)</span></code></pre></div>
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
-  0.000   0.000   0.000   0.497   1.000   1.000 </code></pre>
+    0.0     0.0     0.5     0.5     1.0     1.0 </code></pre>
 <hr>
 </div>
 <div id="b.-muestras" class="section level3">
@@ -2774,19 +2774,36 @@ muestra aleatoria de la población y</p>
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>numeroAleatorio1 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1</span>, <span class="dv">100</span>, <span class="dv">1000</span>);</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>numeroAleatorio1</span></code></pre></div>
-<pre><code>[1] 289.3233</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#El número aleatorio se usa para obtener una muestra de tamaño aleatorio.</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>numeroAleatorio1 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1</span>, <span class="dv">100</span>, <span class="dv">1000</span>);</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>numeroAleatorio1</span></code></pre></div>
+<pre><code>[1] 868.0445</code></pre>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>muestraAleatoria1 <span class="ot">&lt;-</span> <span class="fu">sample</span>(poblacion1, numeroAleatorio1, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>muestraAleatoria1</span></code></pre></div>
-<pre><code>  [1] 0 1 1 0 1 1 0 1 1 1 1 0 0 0 1 1 0 1 0 0 0 1 1 1 1 0 1 0 0 1 0 1 0 1 1 0 1
- [38] 1 0 0 0 1 0 0 1 0 0 1 1 0 0 1 1 1 1 1 1 0 0 1 1 1 0 1 0 0 0 0 0 1 1 1 0 0
- [75] 1 1 0 0 0 0 0 0 1 0 0 1 1 0 1 0 1 0 1 0 1 0 0 1 1 1 0 0 0 0 1 0 0 0 1 1 0
-[112] 0 1 1 0 0 0 0 0 1 1 1 1 1 0 1 0 0 0 0 0 0 0 1 0 1 1 1 1 1 0 0 1 1 0 1 0 0
-[149] 0 1 1 1 0 0 0 1 1 0 0 1 1 1 0 1 1 1 0 1 1 0 0 1 0 0 0 1 1 1 1 0 0 1 0 0 1
-[186] 1 1 0 1 0 0 0 1 1 1 1 0 0 0 1 1 0 0 0 1 1 1 1 0 1 1 0 1 1 0 1 1 0 0 1 1 0
-[223] 0 0 0 0 0 1 0 0 1 0 1 0 0 1 1 1 0 0 1 1 1 1 0 1 0 0 1 1 1 0 1 0 0 1 0 1 0
-[260] 1 1 1 1 1 1 0 0 0 1 1 0 1 0 1 0 1 0 1 1 0 0 1 1 0 1 0 1 1 0</code></pre>
+<pre><code>  [1] 0 0 0 1 0 1 0 1 1 1 0 0 0 1 1 0 0 1 1 0 0 1 1 1 1 1 1 1 0 1 1 1 1 0 1 1 1
+ [38] 1 1 0 1 1 1 0 1 0 1 0 1 0 0 1 1 0 0 1 1 0 0 1 1 0 0 0 0 1 1 1 1 1 1 1 0 1
+ [75] 0 0 0 0 0 0 1 0 0 0 1 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 1 1 0 0 0 1 1 0 0 0 0
+[112] 0 1 1 1 1 0 1 1 0 0 0 0 0 1 0 1 0 1 0 0 1 0 1 0 1 0 0 1 1 1 0 0 1 0 1 1 0
+[149] 1 1 1 1 1 1 0 1 1 1 0 0 1 0 0 1 1 0 1 1 0 0 0 0 0 1 1 1 0 0 1 0 0 1 0 1 1
+[186] 0 1 1 1 1 0 1 0 0 0 0 0 0 1 0 1 1 0 1 0 1 1 1 0 0 0 1 0 0 0 0 1 1 0 0 1 1
+[223] 0 1 0 0 0 0 1 0 0 0 1 1 0 1 1 1 1 1 0 1 1 1 0 1 1 1 0 0 0 0 1 1 1 1 0 1 0
+[260] 1 0 1 0 1 1 1 0 0 0 0 1 1 0 1 0 0 1 1 0 1 1 1 0 1 0 0 0 0 1 1 1 1 1 0 0 1
+[297] 0 0 1 0 0 1 1 1 0 0 1 1 1 0 1 1 1 1 1 0 1 0 1 0 0 0 0 1 1 1 0 0 0 0 1 0 1
+[334] 1 0 0 0 1 1 1 0 1 0 1 1 0 1 0 1 1 0 1 0 1 0 0 0 0 1 0 1 1 1 0 1 0 0 0 1 1
+[371] 1 0 1 0 0 0 1 0 1 1 1 1 0 0 0 1 0 0 0 1 0 0 1 0 0 0 1 1 0 1 0 0 0 0 0 1 1
+[408] 1 0 0 1 1 0 1 1 1 1 0 0 1 1 1 0 1 0 0 1 1 0 1 0 1 1 1 1 1 1 1 0 1 0 0 0 1
+[445] 0 1 1 0 0 0 1 1 1 0 1 1 1 1 0 0 0 0 0 0 0 1 1 0 1 1 1 0 0 1 0 0 1 0 1 0 0
+[482] 1 0 1 0 0 0 0 1 1 0 1 1 1 0 0 1 0 0 0 0 0 0 0 1 1 0 0 0 1 1 1 1 1 1 0 1 0
+[519] 1 1 0 0 1 0 0 0 0 1 0 1 0 0 1 1 0 0 0 1 0 0 1 0 1 1 0 1 1 1 1 1 0 1 1 1 0
+[556] 1 0 1 0 0 1 1 0 1 1 1 0 1 1 0 0 1 0 0 0 1 0 0 1 1 1 0 0 0 1 1 0 0 1 1 1 0
+[593] 0 0 1 1 1 0 0 1 1 0 1 0 1 0 0 1 0 1 1 1 0 0 0 0 1 1 0 0 0 1 1 1 1 1 1 1 1
+[630] 0 0 0 1 1 0 1 0 0 1 0 1 1 0 0 0 1 0 1 0 1 1 0 1 1 0 1 1 1 0 1 0 1 1 1 1 1
+[667] 1 0 0 1 0 1 0 1 1 0 0 0 1 1 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 1 1 1 1 1 1 1 0
+[704] 1 0 0 1 0 0 0 1 0 0 0 0 1 1 1 1 0 1 0 0 1 1 0 0 1 1 1 1 0 0 0 0 1 0 0 0 1
+[741] 1 0 1 0 1 0 1 1 1 1 0 0 1 0 0 0 1 0 0 0 0 1 1 1 0 0 1 0 1 0 0 1 0 0 1 1 1
+[778] 0 0 1 1 0 0 0 1 0 1 1 0 0 1 1 1 1 1 0 1 1 1 1 0 0 0 1 1 0 0 1 0 0 1 0 1 0
+[815] 0 0 1 0 1 0 1 1 0 0 0 0 0 1 0 0 0 0 1 1 0 0 1 0 1 0 0 1 1 1 1 0 1 0 0 1 1
+[852] 1 0 1 0 0 1 1 1 0 0 1 0 1 0 0 0 1</code></pre>
 <ul>
 <li>Calcule el estimador de la proporción muestral pˆ para un tamaño de
 muestra dado n.</li>
@@ -2796,7 +2813,7 @@ muestra dado n.</li>
 </div>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>pEstimadorMuestraAleatoria1 <span class="ot">&lt;-</span> <span class="fu">sum</span>(muestraAleatoria1 <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="fu">length</span>(muestraAleatoria1)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>pEstimadorMuestraAleatoria1</span></code></pre></div>
-<pre><code>[1] 0.5086505</code></pre>
+<pre><code>[1] 0.5</code></pre>
 <hr>
 </div>
 <div id="c.-500-veces-b" class="section level3">
@@ -2809,49 +2826,525 @@ Realice en su informe un comentario sobre los resultados obtenidos.</p>
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>poblacion2 <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="dv">500</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.5</span>))</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>poblacion2</span></code></pre></div>
-<pre><code>  [1] 1 0 1 0 1 1 1 0 0 0 0 0 0 0 1 1 0 0 0 0 1 0 1 1 0 1 1 0 1 1 1 0 1 0 1 0 1
- [38] 0 0 0 0 1 1 0 1 0 0 1 0 1 0 0 0 1 0 0 0 0 0 1 1 0 1 0 0 1 0 0 1 1 1 0 0 1
- [75] 0 1 1 1 1 0 1 0 0 0 1 1 0 1 0 1 0 1 1 0 0 1 0 1 1 0 0 0 0 1 1 1 0 0 1 1 1
-[112] 1 1 0 0 1 1 1 0 1 0 0 0 0 1 1 1 0 0 1 1 1 1 0 0 1 0 1 0 1 1 1 0 1 0 0 1 0
-[149] 1 1 0 1 1 0 0 1 0 0 1 0 0 0 1 0 1 0 0 0 0 1 1 0 0 1 1 1 0 1 0 1 0 1 1 1 1
-[186] 0 0 0 0 1 1 0 0 0 0 1 0 0 1 0 1 0 1 0 0 1 1 0 0 0 1 0 0 0 1 0 0 1 1 1 1 0
-[223] 0 1 0 0 1 0 1 1 1 0 1 1 1 1 1 0 0 1 1 1 1 1 1 0 1 0 1 0 0 0 0 1 0 1 1 0 1
-[260] 0 1 1 1 1 1 1 1 0 0 0 1 0 0 0 1 0 1 1 1 1 1 0 0 1 0 0 1 1 0 0 1 0 1 1 1 1
-[297] 1 0 1 1 0 1 0 1 1 1 1 1 1 1 0 1 0 0 0 0 0 0 1 1 1 1 0 0 1 1 1 0 0 0 0 0 0
-[334] 0 0 1 1 1 0 0 1 0 1 1 0 1 0 0 1 1 1 0 1 1 0 0 1 1 1 1 1 0 1 0 0 1 1 0 0 0
-[371] 0 0 1 0 1 1 0 0 1 1 1 0 1 0 1 0 1 1 0 1 1 0 1 1 0 1 1 1 0 0 1 1 0 0 1 0 1
-[408] 0 0 1 1 1 0 0 1 1 0 0 0 1 0 0 0 0 0 1 1 1 1 1 1 1 0 0 1 1 0 1 0 0 1 1 1 1
-[445] 1 1 1 0 1 1 1 1 0 1 0 1 0 1 1 0 1 1 0 1 0 1 0 1 1 1 1 0 0 0 1 1 1 1 1 0 0
-[482] 1 1 1 0 1 1 1 1 0 0 0 0 1 1 0 1 1 1 0</code></pre>
-<p><strong>Genere una función que permita:</strong> - Obtener una
-muestra aleatoria de la población y</p>
-<div class="knitr-options" data-fig-width="576" data-fig-height="460">
-
-</div>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>numeroAleatorio2 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1</span>, <span class="dv">100</span>, <span class="dv">500</span>);</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>numeroAleatorio2</span></code></pre></div>
-<pre><code>[1] 124.8947</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>muestraAleatoria2 <span class="ot">&lt;-</span> <span class="fu">sample</span>(poblacion2, numeroAleatorio2, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>muestraAleatoria2</span></code></pre></div>
-<pre><code>  [1] 1 0 0 1 0 0 0 1 0 1 1 1 1 0 1 1 0 1 1 0 1 1 1 0 0 1 0 1 0 1 1 1 1 1 0 1 1
- [38] 1 0 0 0 1 0 1 1 0 0 1 0 1 1 1 1 0 1 0 0 1 0 1 1 0 1 0 1 1 0 1 0 0 1 1 0 0
- [75] 0 1 0 1 1 0 0 1 1 1 1 1 0 1 0 1 1 0 1 0 0 1 1 0 0 1 1 1 1 0 1 1 1 0 0 1 0
-[112] 0 0 0 0 0 0 1 0 0 1 0 0 1</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>pEstimadorMuestraAleatoria2 <span class="ot">&lt;-</span> <span class="fu">sum</span>(muestraAleatoria2 <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="fu">length</span>(muestraAleatoria2)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>pEstimadorMuestraAleatoria2</span></code></pre></div>
-<pre><code>[1] 0.5403226</code></pre>
-<ul>
-<li>Calcule el estimador de la proporción muestral pˆ para un tamaño de
-muestra dado n.</li>
-</ul>
-<div class="knitr-options" data-fig-width="576" data-fig-height="460">
-
-</div>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>pEstimadorMuestraAleatoria2 <span class="ot">&lt;-</span> <span class="fu">sum</span>(muestraAleatoria2 <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="fu">length</span>(muestraAleatoria2)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>pEstimadorMuestraAleatoria2</span></code></pre></div>
-<pre><code>[1] 0.5403226</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>tablaEstimadores <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="fu">matrix</span>(<span class="at">nrow =</span> <span class="dv">0</span>, <span class="at">ncol =</span> <span class="dv">2</span>))</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(tablaEstimadores) <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;tamaño muestra&quot;</span>, <span class="st">&quot;estimadorP&quot;</span>);</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">500</span>) {</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  numeroAleatorio1 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1</span>, <span class="dv">100</span>, <span class="dv">1000</span>);</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  muestraAleatoria1 <span class="ot">&lt;-</span> <span class="fu">sample</span>(poblacion1, numeroAleatorio1, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  pEstimadorMuestraAleatoria1 <span class="ot">&lt;-</span> <span class="fu">sum</span>(muestraAleatoria1 <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="fu">length</span>(muestraAleatoria1)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  row <span class="ot">&lt;-</span> <span class="fu">c</span>(numeroAleatorio1,pEstimadorMuestraAleatoria1)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>  tablaEstimadores[<span class="fu">nrow</span>(tablaEstimadores)<span class="sc">+</span><span class="dv">1</span>,]  <span class="ot">=</span> row</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(tablaEstimadores)</span></code></pre></div>
+<pre><code>    tamaño muestra estimadorP
+1         519.8170  0.4971098
+2         527.6023  0.5237192
+3         429.7204  0.5174825
+4         787.6326  0.4942821
+5         997.9352  0.5005015
+6         439.9957  0.5216401
+7         624.4092  0.5064103
+8         408.1778  0.5294118
+9         148.0518  0.5000000
+10        559.7852  0.4830054
+11        446.0908  0.4955157
+12        817.1105  0.4895961
+13        144.9256  0.5069444
+14        710.7796  0.5056338
+15        878.6823  0.5068337
+16        171.4737  0.5263158
+17        853.2864  0.4994138
+18        396.4235  0.5101010
+19        199.8027  0.4572864
+20        742.5592  0.4932615
+21        633.1676  0.5071090
+22        445.0220  0.5123596
+23        763.6691  0.4836173
+24        576.4538  0.5034722
+25        764.4133  0.5065445
+26        391.5287  0.4987212
+27        469.9491  0.4776119
+28        883.5375  0.5016988
+29        629.7524  0.4880763
+30        731.4552  0.4924761
+31        394.5859  0.4746193
+32        143.2925  0.5034965
+33        770.5340  0.5077922
+34        712.8195  0.5084270
+35        967.9940  0.5036194
+36        236.1176  0.4957627
+37        652.8650  0.5046012
+38        894.1281  0.5134228
+39        478.9200  0.5083682
+40        110.1599  0.5090909
+41        349.1452  0.4813754
+42        943.8323  0.5015907
+43        108.4809  0.4722222
+44        587.8063  0.4787053
+45        640.3952  0.4921875
+46        502.7682  0.4920319
+47        353.4135  0.5297450
+48        139.1966  0.5107914
+49        546.1302  0.4981685
+50        124.8719  0.5483871
+51        177.7276  0.4915254
+52        795.4144  0.5094340
+53        254.1142  0.4330709
+54        832.3509  0.5012019
+55        523.8524  0.4933078
+56        832.8353  0.5084135
+57        321.0766  0.4797508
+58        319.2505  0.4858934
+59        781.6830  0.4955186
+60        660.6220  0.4984848
+61        560.3521  0.5000000
+62        120.0371  0.4916667
+63        243.5975  0.4814815
+64        403.0587  0.4590571
+65        293.9090  0.4948805
+66        614.2748  0.4951140
+67        854.4089  0.5011710
+68        882.1126  0.5011338
+69        995.0392  0.4994975
+70        585.7988  0.4991453
+71        287.2291  0.4947735
+72        145.5759  0.4482759
+73        479.7456  0.4926931
+74        714.7840  0.4971989
+75        706.6674  0.4971671
+76        908.7464  0.4977974
+77        595.3358  0.5025210
+78        141.1880  0.5248227
+79        637.3991  0.4850863
+80        406.6313  0.4901478
+81        684.7000  0.4941520
+82        152.9197  0.5657895
+83        634.7592  0.4984227
+84        232.2938  0.5086207
+85        468.4434  0.4893162
+86        199.3616  0.5427136
+87        957.2536  0.5015674
+88        647.5480  0.4744977
+89        791.4511  0.4968394
+90        790.1309  0.5088608
+91        751.7338  0.4926764
+92        768.5633  0.4830729
+93        782.2849  0.4948849
+94        233.7024  0.4978541
+95        413.2506  0.4939467
+96        466.0129  0.5150215
+97        925.0701  0.4929730
+98        399.8149  0.4586466
+99        749.7573  0.5073431
+100       175.3164  0.4457143
+101       784.4441  0.5012755
+102       149.7999  0.4697987
+103       989.1830  0.4984833
+104       646.9246  0.4953560
+105       129.1432  0.4806202
+106       888.0361  0.4943694
+107       755.4784  0.4940397
+108       252.2670  0.4920635
+109       605.7959  0.4892562
+110       273.6259  0.5091575
+111       503.7360  0.5029821
+112       106.9309  0.4811321
+113       182.8308  0.5274725
+114       585.4752  0.5025641
+115       763.5242  0.5019659
+116       853.1070  0.4912075
+117       135.5648  0.4962963
+118       956.2391  0.4989540
+119       864.5480  0.5208333
+120       258.7439  0.4961240
+121       441.9535  0.5215420
+122       697.2372  0.4978479
+123       782.1716  0.5000000
+124       312.5821  0.5064103
+125       789.3371  0.5133080
+126       406.3132  0.4975369
+127       991.7398  0.4984864
+128       236.6670  0.4830508
+129       724.8258  0.4889503
+130       667.8294  0.4977511
+131       815.7373  0.5030675
+132       237.4228  0.5189873
+133       183.5405  0.5573770
+134       336.4508  0.4851190
+135       650.9524  0.5000000
+136       118.3477  0.5254237
+137       348.4056  0.4971264
+138       159.8798  0.5031447
+139       412.2385  0.4878641
+140       591.0662  0.4940778
+141       778.1074  0.4922879
+142       891.9055  0.5028058
+143       815.5458  0.4981595
+144       156.9480  0.5000000
+145       323.4387  0.5479876
+146       502.6207  0.4960159
+147       970.4859  0.4969072
+148       530.4080  0.4943396
+149       467.1423  0.4710921
+150       775.1162  0.4851613
+151       653.8884  0.4854518
+152       675.5723  0.5155556
+153       956.0589  0.5031381
+154       664.7576  0.4969880
+155       748.3154  0.5013369
+156       491.0387  0.4949084
+157       863.4597  0.4971031
+158       547.5646  0.4862888
+159       515.4780  0.5126214
+160       676.0193  0.5118343
+161       904.9430  0.5011062
+162       804.3580  0.4975124
+163       583.2326  0.5025729
+164       573.2100  0.5340314
+165       649.9926  0.5023112
+166       316.0397  0.5316456
+167       600.0816  0.4950000
+168       683.9212  0.4934114
+169       409.9170  0.4645477
+170       986.0931  0.5010142
+171       489.2190  0.4621677
+172       875.0592  0.4960000
+173       100.6044  0.5200000
+174       322.1983  0.4596273
+175       169.0252  0.5266272
+176       540.2266  0.4925926
+177       714.8959  0.4915966
+178       458.0083  0.5021834
+179       960.3847  0.4989583
+180       590.0878  0.5135593
+181       220.0632  0.5136364
+182       153.2543  0.5228758
+183       826.9999  0.4963680
+184       828.2686  0.5060386
+185       277.8926  0.4909747
+186       759.3032  0.5085639
+187       279.4465  0.5161290
+188       485.8406  0.5134021
+189       460.0901  0.5217391
+190       852.1353  0.5023474
+191       605.8249  0.5140496
+192       400.3645  0.4950000
+193       651.9170  0.4915515
+194       645.6750  0.5224806
+195       551.5644  0.4900181
+196       365.2899  0.4547945
+197       564.8513  0.5000000
+198       348.1726  0.4942529
+199       160.5069  0.4687500
+200       774.6511  0.5012920
+201       434.1292  0.5023041
+202       152.4401  0.5197368
+203       710.4639  0.4929577
+204       788.1823  0.4949239
+205       996.0541  0.5000000
+206       435.6887  0.4781609
+207       221.5779  0.4570136
+208       438.1818  0.4817352
+209       866.4021  0.5080831
+210       541.3209  0.5120148
+211       935.7643  0.4983957
+212       798.6522  0.4987469
+213       969.5163  0.4974200
+214       523.1119  0.5066922
+215       420.0603  0.5166667
+216       611.6753  0.5188216
+217       336.7641  0.5059524
+218       386.6807  0.5000000
+219       454.2299  0.5044053
+220       492.2382  0.4796748
+221       579.5967  0.5198618
+222       981.6857  0.4994903
+223       330.2861  0.4878788
+224       744.4962  0.4865591
+225       684.7089  0.4912281
+226       648.0638  0.4953704
+227       495.8755  0.5171717
+228       800.4967  0.5012500
+229       674.1691  0.5000000
+230       161.0834  0.4596273
+231       761.7456  0.4954008
+232       205.4410  0.5365854
+233       738.1958  0.5108401
+234       566.4277  0.5035336
+235       224.6887  0.5312500
+236       369.2380  0.5067751
+237       391.5314  0.5191816
+238       479.8342  0.4780793
+239       520.1272  0.5019231
+240       395.9069  0.4835443
+241       195.4639  0.4666667
+242       846.6313  0.4988180
+243       149.7770  0.5033557
+244       483.4429  0.4927536
+245       113.5026  0.4955752
+246       843.2537  0.4970344
+247       688.2964  0.4941860
+248       690.7922  0.5072464
+249       747.0279  0.5020080
+250       284.7606  0.4859155
+251       622.9923  0.5128617
+252       345.6403  0.4927536
+253       354.0131  0.5000000
+254       100.1061  0.5400000
+255       144.9035  0.4722222
+256       474.3401  0.5400844
+257       899.7864  0.5038932
+258       774.8875  0.4896641
+259       934.6332  0.5053533
+260       307.8535  0.4885993
+261       908.1572  0.5011013
+262       970.5886  0.4989691
+263       970.5081  0.5010309
+264       972.5326  0.4958848
+265       874.5659  0.4965675
+266       965.2151  0.4974093
+267       362.4249  0.5193370
+268       842.3777  0.5071259
+269       837.5748  0.4994026
+270       629.2532  0.4976153
+271       217.2751  0.4700461
+272       923.4896  0.4962080
+273       957.7407  0.4994775
+274       214.5434  0.4485981
+275       288.6148  0.5138889
+276       437.9734  0.5263158
+277       564.9857  0.5088652
+278       755.1500  0.5125828
+279       937.4827  0.5005336
+280       318.1573  0.5220126
+281       776.0819  0.4909794
+282       595.2644  0.4857143
+283       259.8881  0.4903475
+284       610.3609  0.5147541
+285       894.3053  0.4977629
+286       827.7305  0.4981862
+287       978.1116  0.5020450
+288       197.4645  0.5431472
+289       793.8950  0.4955864
+290       971.9953  0.5046344
+291       613.4611  0.4877651
+292       719.7738  0.4895688
+293       926.4379  0.5000000
+294       335.6650  0.4985075
+295       670.3023  0.4985075
+296       832.3546  0.5036058
+297       662.3231  0.5015106
+298       134.8780  0.5149254
+299       799.5542  0.4968711
+300       858.9903  0.5000000
+301       852.5351  0.5058685
+302       814.9867  0.5049140
+303       185.0926  0.5297297
+304       521.4953  0.5278311
+305       195.0700  0.5282051
+306       440.4066  0.4886364
+307       591.5684  0.5211506
+308       636.7184  0.5157233
+309       447.1546  0.4876957
+310       868.9269  0.4988479
+311       383.4685  0.5221932
+312       620.8075  0.4935484
+313       345.6376  0.4956522
+314       667.4757  0.4932534
+315       916.2013  0.4912664
+316       205.9451  0.4829268
+317       750.5792  0.4920000
+318       317.4738  0.5268139
+319       635.1425  0.5244094
+320       174.7118  0.5632184
+321       163.1986  0.5398773
+322       934.2071  0.4967880
+323       291.9727  0.4914089
+324       150.7667  0.5000000
+325       119.6660  0.5546218
+326       869.3206  0.5097814
+327       884.8235  0.4943439
+328       709.6590  0.4936530
+329       869.5589  0.4994246
+330       686.4396  0.5247813
+331       223.1670  0.4932735
+332       617.1238  0.4991896
+333       326.3767  0.5153374
+334       246.4013  0.4837398
+335       515.5155  0.5067961
+336       123.2971  0.4715447
+337       414.3861  0.5169082
+338       335.1719  0.4865672
+339       951.1649  0.5026288
+340       731.7713  0.5061560
+341       733.3136  0.5170532
+342       443.5828  0.5056433
+343       811.1490  0.5104809
+344       833.0693  0.4993998
+345       646.4221  0.5123839
+346       299.9129  0.5484950
+347       724.8680  0.5000000
+348       648.1884  0.4938272
+349       385.6386  0.4883117
+350       621.8949  0.4847021
+351       154.7205  0.5000000
+352       955.2620  0.5036649
+353       705.8832  0.4822695
+354       878.7602  0.4874715
+355       490.3081  0.5142857
+356       229.4821  0.5283843
+357       940.7105  0.5021277
+358       388.6631  0.5154639
+359       817.0504  0.4969400
+360       680.7767  0.5029412
+361       697.4331  0.4964132
+362       568.1019  0.4894366
+363       117.1731  0.5128205
+364       960.5418  0.5010417
+365       507.6405  0.5009862
+366       816.4772  0.5085784
+367       781.1520  0.5147247
+368       558.5482  0.4892473
+369       333.6813  0.5015015
+370       982.9416  0.4989817
+371       807.4448  0.4981413
+372       659.3469  0.5007587
+373       278.9145  0.5287770
+374       416.4013  0.4831731
+375       705.5489  0.5120567
+376       475.9969  0.4968421
+377       384.6197  0.5026042
+378       627.6812  0.5007974
+379       297.6472  0.5016835
+380       907.3311  0.5104741
+381       411.1473  0.4793187
+382       692.0252  0.5057803
+383       491.3493  0.5315682
+384       518.3163  0.4884170
+385       540.9085  0.5129630
+386       594.0561  0.5016835
+387       457.5803  0.4857768
+388       983.6863  0.5015259
+389       764.0539  0.4960733
+390       539.4317  0.4897959
+391       813.2941  0.4993850
+392       788.0180  0.4835025
+393       759.6646  0.4953887
+394       515.7086  0.5067961
+395       899.8780  0.5072303
+396       742.8867  0.4986523
+397       871.2953  0.4913892
+398       299.1749  0.4481605
+399       737.8759  0.5101764
+400       329.7910  0.5045593
+401       974.7784  0.4989733
+402       467.4927  0.5224839
+403       337.9718  0.4985163
+404       104.2323  0.5192308
+405       305.8508  0.4786885
+406       103.1933  0.4563107
+407       414.7428  0.5024155
+408       477.9855  0.4800839
+409       337.8295  0.4836795
+410       997.7312  0.4994985
+411       950.9915  0.5042105
+412       203.2673  0.4581281
+413       789.8365  0.4980989
+414       700.8135  0.5114286
+415       996.4870  0.4989960
+416       982.5573  0.5000000
+417       816.3509  0.4987745
+418       293.8201  0.4812287
+419       404.6715  0.5049505
+420       924.1576  0.5021645
+421       639.9662  0.5070423
+422       423.4109  0.5130024
+423       743.8825  0.5020188
+424       356.2401  0.4662921
+425       119.9787  0.4789916
+426       377.0981  0.5039788
+427       845.7675  0.4994083
+428       485.0851  0.5010309
+429       201.8653  0.5223881
+430       594.7135  0.4915825
+431       797.2058  0.5069009
+432       807.5748  0.4907063
+433       815.7404  0.5104294
+434       146.2315  0.4794521
+435       171.0697  0.5146199
+436       661.6364  0.5189107
+437       425.8544  0.4941176
+438       897.8354  0.5050167
+439       601.5505  0.4858569
+440       496.1321  0.5020161
+441       358.8491  0.4720670
+442       690.7384  0.4855072
+443       816.2915  0.4950980
+444       557.1713  0.5350090
+445       679.4334  0.5198822
+446       980.4068  0.5000000
+447       134.5131  0.4776119
+448       404.4608  0.4975248
+449       216.6824  0.5277778
+450       394.1582  0.5076142
+451       551.8119  0.5027223
+452       177.2908  0.4689266
+453       665.5547  0.5067669
+454       213.0903  0.4882629
+455       748.8532  0.5013369
+456       366.7337  0.4781421
+457       943.4152  0.4931071
+458       703.5611  0.4978663
+459       383.3775  0.5195822
+460       341.2163  0.4780059
+461       899.6917  0.5016685
+462       284.3828  0.4859155
+463       860.2499  0.5011628
+464       757.7163  0.5112285
+465       438.9100  0.4931507
+466       856.5339  0.4906542
+467       439.2135  0.4897494
+468       357.0722  0.4733894
+469       585.0647  0.4837607
+470       304.6723  0.4967105
+471       636.5269  0.4984277
+472       752.3939  0.4906915
+473       602.7162  0.5049834
+474       571.2532  0.4956217
+475       338.2584  0.4881657
+476       607.1573  0.5255354
+477       300.9022  0.4900000
+478       115.6888  0.4347826
+479       515.1938  0.4873786
+480       358.1180  0.5335196
+481       338.9623  0.5088757
+482       854.2142  0.5035129
+483       135.2561  0.5111111
+484       274.6244  0.4708029
+485       238.4794  0.4789916
+486       348.3211  0.5172414
+487       844.7344  0.4952607
+488       932.1456  0.4946352
+489       959.7790  0.4994786
+490       546.5037  0.5293040
+491       780.6748  0.4948718
+492       485.7558  0.5134021
+493       110.9737  0.4909091
+494       192.8700  0.5260417
+495       202.2460  0.4554455
+496       544.4077  0.4834559
+497       284.8456  0.4788732
+498       632.5611  0.5094937
+499       627.0162  0.5087719
+500       158.3593  0.5379747</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(tablaEstimadores)</span></code></pre></div>
+<pre><code> tamaño muestra    estimadorP    
+ Min.   :100.1   Min.   :0.4331  
+ 1st Qu.:340.7   1st Qu.:0.4916  
+ Median :578.0   Median :0.4994  
+ Mean   :559.2   Mean   :0.4998  
+ 3rd Qu.:781.3   3rd Qu.:0.5079  
+ Max.   :997.9   Max.   :0.5658  </code></pre>
 <p>¿Qué tan simétricos o sesgados son los resultados obtenidos? y ¿qué
 se puede observar en cuanto a la variabilidad?. Realice en su informe un
 comentario sobre los resultados obtenidos.</p>
@@ -2868,265 +3361,286 @@ Comente ensu informe los resultados obtenidos</p>
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>tamanosMuestra <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">500</span>)</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>tamanosMuestra</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>tamanosMuestra <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">500</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>tamanosMuestra</span></code></pre></div>
 <pre><code> [1]   5  10  15  20  30  50  60 100 200 500</code></pre>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(tamanoMuestra <span class="cf">in</span> tamanosMuestra) {</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">Muestra tamano: &quot;</span> , tamanoMuestra, <span class="st">&#39;</span><span class="sc">\n</span><span class="st">&#39;</span>)</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  muestraAleatoria3 <span class="ot">&lt;-</span> <span class="fu">sample</span>(poblacion2, tamanoMuestra, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(muestraAleatoria3)</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  pEstimadorMuestraAleatoria3 <span class="ot">&lt;-</span> <span class="fu">sum</span>(muestraAleatoria3 <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="fu">length</span>(muestraAleatoria3)</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Estimador de la proporción muestral: &quot;</span>, pEstimadorMuestraAleatoria3)</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(tamanoMuestra <span class="cf">in</span> tamanosMuestra) {</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">Muestra tamano: &quot;</span> , tamanoMuestra, <span class="st">&#39;</span><span class="sc">\n</span><span class="st">&#39;</span>)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  muestra <span class="ot">&lt;-</span> <span class="fu">sample</span>(poblacion1, tamanoMuestra, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(muestra)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  pEstimadorMuestra <span class="ot">&lt;-</span> <span class="fu">sum</span>(muestra <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="fu">length</span>(muestra)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Estimador de la proporción muestral: &quot;</span>, pEstimadorMuestra)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>
 
 Muestra tamano:  5 
-1 1 0 1 0
-Estimador de la proporción muestral:  0.6
+0 1 0 1 0
+Estimador de la proporción muestral:  0.4
 
 Muestra tamano:  10 
-1 1 1 1 1 1 0 0 0 0
-Estimador de la proporción muestral:  0.6
+0 1 0 0 0 0 1 1 0 0
+Estimador de la proporción muestral:  0.3
 
 Muestra tamano:  15 
-0 1 0 0 1 0 1 1 0 1 1 0 1 0 0
-Estimador de la proporción muestral:  0.4666667
+0 0 0 1 0 1 0 0 1 1 1 1 0 1 1
+Estimador de la proporción muestral:  0.5333333
 
 Muestra tamano:  20 
-1 1 1 0 0 0 1 0 0 0 1 1 0 0 1 1 1 0 0 1
-Estimador de la proporción muestral:  0.5
+1 0 1 0 0 1 1 0 0 0 1 1 1 1 0 1 1 1 0 0
+Estimador de la proporción muestral:  0.55
 
 Muestra tamano:  30 
-1 1 0 1 1 0 0 1 1 0 1 1 1 1 0 1 0 0 0 1 0 1 1 1 1 0 0 1 1 0
+1 0 1 1 0 0 0 1 1 1 1 1 0 0 1 1 0 0 0 1 1 0 1 1 0 1 1 1 0 1
 Estimador de la proporción muestral:  0.6
 
 Muestra tamano:  50 
-1 1 0 0 0 1 1 0 0 1 0 1 0 1 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 1 1 1 1 1 1 0 1 1 1 0 1 1 1 1 1 0 0 0 0 1
+0 0 0 1 0 0 0 1 0 1 0 0 1 1 1 1 1 1 0 0 1 0 1 0 1 0 0 1 0 1 0 1 0 1 1 0 1 1 1 1 1 0 1 0 0 0 0 1 0 1
 Estimador de la proporción muestral:  0.5
 
 Muestra tamano:  60 
-0 0 0 0 0 1 1 1 1 1 1 1 0 0 1 1 1 0 1 0 0 0 0 0 0 1 1 0 1 1 0 0 1 0 0 0 0 0 0 1 1 1 1 1 1 0 0 0 0 0 1 0 1 1 1 1 0 0 0 1
-Estimador de la proporción muestral:  0.4666667
+0 1 0 0 0 1 0 1 1 0 1 0 0 1 1 0 0 1 1 1 1 0 1 1 0 1 1 0 1 1 1 1 0 1 0 1 0 1 0 0 1 1 1 0 1 0 1 1 0 0 0 1 1 1 0 1 0 1 1 1
+Estimador de la proporción muestral:  0.5833333
 
 Muestra tamano:  100 
-0 0 0 0 0 1 0 1 1 1 0 0 1 0 1 0 1 1 0 0 1 1 1 0 1 0 0 0 1 1 1 1 0 0 1 0 1 0 1 1 0 0 0 1 1 1 0 0 1 0 1 0 0 1 1 0 0 0 1 0 0 0 1 0 0 1 1 1 0 1 1 0 0 0 0 1 0 0 1 0 0 1 0 0 0 1 1 1 0 0 0 1 1 1 1 0 0 1 1 0
-Estimador de la proporción muestral:  0.46
+0 0 1 1 1 0 0 0 1 1 0 1 0 1 0 1 0 1 0 1 0 0 1 0 0 1 1 0 0 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 1 0 1 1 0 0 1 0 0 1 0 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 1 1 0 0 1 0 0 0 0 0 1 1 1 1 0 1 0 0 0 0 1 1 1
+Estimador de la proporción muestral:  0.5
 
 Muestra tamano:  200 
-1 0 0 0 0 0 1 1 1 0 1 1 1 0 0 0 1 0 1 1 0 0 1 1 0 1 0 0 0 0 1 0 1 1 1 1 1 1 0 1 1 1 0 0 1 0 1 0 1 1 1 1 0 1 0 0 1 1 0 1 0 1 0 0 1 1 1 0 1 0 1 1 0 0 1 0 1 0 0 1 1 0 1 1 0 0 0 1 1 0 1 1 1 1 0 0 0 1 0 1 1 1 1 0 1 0 1 0 1 1 1 1 0 1 1 1 0 0 0 1 1 0 0 1 0 0 1 0 0 1 1 1 0 0 0 1 0 0 1 0 1 1 0 0 1 1 1 1 1 0 1 1 0 1 1 1 1 1 0 0 0 0 1 0 1 0 1 1 1 0 1 0 1 0 0 0 1 1 1 0 0 0 1 1 1 0 1 0 0 0 0 1 1 1 1 1 0 0 1 0
-Estimador de la proporción muestral:  0.545
+0 1 1 0 1 1 0 1 0 0 0 1 1 0 0 0 0 1 0 0 1 1 1 0 1 0 0 0 0 0 0 0 1 0 1 0 1 0 1 0 0 0 1 1 0 0 1 0 0 0 1 0 1 0 1 0 1 1 1 0 1 1 1 0 0 0 1 1 0 1 0 1 1 1 0 1 0 0 0 0 0 1 1 1 0 0 0 1 0 1 1 1 1 1 1 0 0 0 1 1 1 0 1 0 0 1 0 1 1 0 0 0 1 0 1 0 0 1 1 1 0 1 1 0 0 1 1 0 0 0 1 0 0 0 1 1 1 0 1 1 1 1 0 1 0 1 1 0 1 0 1 1 0 1 0 1 0 1 1 0 0 1 0 0 0 1 1 0 1 0 0 0 1 1 0 1 0 1 0 1 1 1 1 0 1 0 1 0 0 1 1 1 1 1 1 1 0 1 1 0
+Estimador de la proporción muestral:  0.51
 
 Muestra tamano:  500 
-0 1 0 0 1 1 1 1 0 0 1 1 0 0 1 0 0 1 1 1 0 1 1 1 0 1 1 0 1 0 1 1 1 0 1 0 0 1 1 0 1 1 0 1 0 0 0 0 1 1 1 0 0 0 0 1 0 1 1 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 0 1 1 1 1 0 0 1 1 1 1 0 1 1 1 1 1 1 1 0 1 1 1 0 1 0 0 1 0 1 1 0 1 1 1 1 1 0 0 1 1 0 1 0 0 1 0 0 1 1 0 1 1 1 0 1 1 1 0 1 0 0 0 0 0 1 1 0 0 1 0 1 0 1 0 0 1 1 0 1 1 1 0 1 1 1 0 0 1 1 1 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 1 0 1 0 1 1 0 0 1 1 0 0 1 0 0 1 0 1 1 0 1 1 1 1 0 0 0 0 0 0 0 1 1 1 1 1 1 1 0 1 0 0 0 1 1 0 1 0 0 1 1 1 1 1 0 1 0 1 0 0 1 1 1 1 0 1 1 1 0 1 1 1 1 0 1 0 1 1 0 0 0 1 0 0 1 0 1 0 1 1 1 0 1 0 1 1 1 1 0 0 1 0 0 1 0 1 0 1 0 1 1 0 0 1 1 1 1 0 0 0 1 1 0 0 1 0 1 0 0 1 1 0 0 0 1 1 0 1 0 0 0 1 1 1 1 0 0 1 1 1 1 1 0 0 1 1 0 1 1 1 1 1 0 0 0 0 0 1 0 1 0 0 0 0 0 0 1 0 1 1 1 0 1 0 1 1 1 1 1 0 0 1 1 1 0 1 1 0 0 1 0 0 1 0 1 0 1 0 1 1 1 0 0 1 1 1 1 1 0 1 0 0 1 1 1 0 1 0 0 0 0 0 1 1 0 1 0 0 0 1 1 1 1 1 1 0 1 0 0 0 1 1 1 1 0 1 1 1 0 1 1 0 0 1 1 0 1 1 0 0 0 0 0 1 0 0 0 0 1 1 1 0 1 0 0 0 1 1 0 0 0 1 0 0 0 0 1 1 0 1 1 1 0 0 1 0 0 0 1 0 1 1 0 0
-Estimador de la proporción muestral:  0.53</code></pre>
+0 1 1 0 0 0 1 0 1 1 0 1 1 1 0 0 0 0 1 0 1 1 1 1 0 1 1 0 1 1 0 1 0 1 1 0 0 1 0 0 1 1 1 1 1 0 0 1 1 1 1 0 0 0 1 1 1 0 0 1 0 1 0 1 1 1 0 0 1 0 0 0 1 0 1 1 0 1 1 0 0 0 1 1 0 0 1 1 1 1 1 0 1 1 1 0 1 1 0 1 1 1 1 0 0 1 0 0 0 1 0 1 0 0 1 1 0 1 0 0 1 0 1 1 1 0 0 0 1 0 1 0 0 1 0 0 0 1 1 1 0 0 1 0 0 1 1 0 0 1 1 0 1 1 1 1 0 1 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0 1 1 1 0 0 1 0 0 0 0 1 0 0 1 1 1 0 1 0 1 1 0 0 1 0 1 1 0 1 1 1 1 1 0 1 1 1 1 0 1 0 0 0 0 0 1 0 0 1 0 0 0 1 1 0 1 1 0 0 1 1 1 1 1 1 0 1 0 1 0 1 1 1 1 0 1 0 1 1 1 1 0 1 1 0 1 0 1 1 1 0 1 0 1 0 0 1 1 0 0 0 0 0 0 1 1 0 0 0 1 0 1 0 1 0 0 1 1 0 0 0 1 0 0 1 0 1 1 0 0 1 0 0 0 1 1 1 1 1 0 0 1 0 0 0 0 0 1 1 0 0 1 0 0 1 1 1 0 1 0 0 0 1 1 0 0 1 0 1 0 0 0 1 1 1 0 0 0 0 0 1 0 1 0 0 1 1 1 1 0 0 1 0 0 0 1 0 1 0 1 0 1 0 1 0 0 1 1 0 0 1 1 1 0 1 1 0 1 1 1 0 1 1 0 1 0 0 1 1 1 0 0 1 1 1 1 1 1 1 0 1 1 1 0 0 0 1 0 0 0 1 1 1 1 1 1 0 1 1 1 0 1 1 0 1 0 0 1 0 0 0 1 0 1 0 1 1 0 1 1 0 1 1 0 0 0 1 1 0 1 0 0 0 0 1 0 1 1 0 1 1 1 0 1 1 0 1 1 0 1 1 0 0 1 0 1
+Estimador de la proporción muestral:  0.514</code></pre>
 <hr>
+</div>
+<div id="c.-simulacion-con-10-plantas-enfermas" class="section level3">
+<h3>c. Simulacion con 10% plantas enfermas</h3>
 <p><strong>e.</strong> Repita toda la simulación (puntos a – d), pero
 ahora para lotes con 10% de plantas enfermas y de nuevo para lotes con
 un 90% de plantas enfermas. Concluya sobre los resultados del
 ejercicio.</p>
-<p><strong> Lotes con 10% de plantas enfermas</strong></p>
+<p><strong> Lote con 10% de plantas enfermas</strong></p>
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>poblacion10PorcientoEnferma <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="dv">1000</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.9</span>, <span class="fl">0.1</span>))</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>poblacion10PorcientoEnferma</span></code></pre></div>
-<pre><code>   [1] 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0
-  [38] 0 0 0 0 0 0 1 1 0 1 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0
-  [75] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0
- [112] 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0
- [149] 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0
- [186] 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
- [223] 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0
- [260] 1 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
- [297] 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0
- [334] 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
- [371] 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1
- [408] 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0
- [445] 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0
- [482] 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0
- [519] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1
- [556] 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0
- [593] 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0
- [630] 0 0 1 0 1 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
- [667] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 1 0 0 0 1 0 0
- [704] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1
- [741] 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0
- [778] 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0
- [815] 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
- [852] 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
- [889] 0 0 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
- [926] 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0
- [963] 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>poblacion10PorcientoEnferma <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">1000</span><span class="sc">*</span><span class="fl">0.1</span>), <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">1000</span><span class="sc">*</span><span class="fl">0.9</span>)))</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>poblacion10PorcientoEnferma</span></code></pre></div>
+<pre><code>   [1] 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0
+  [38] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0
+  [75] 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0
+ [112] 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ [149] 0 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 0
+ [186] 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ [223] 0 0 0 0 1 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0
+ [260] 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0
+ [297] 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ [334] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ [371] 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0
+ [408] 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ [445] 0 0 0 0 1 0 1 1 0 1 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 1 1 0 0 0 1 0 0 0
+ [482] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0
+ [519] 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ [556] 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0
+ [593] 0 0 0 0 0 0 0 1 0 0 1 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0
+ [630] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0
+ [667] 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0
+ [704] 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 1 0 0
+ [741] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0
+ [778] 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0
+ [815] 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 1 0 1 0 0 0 0
+ [852] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ [889] 0 0 1 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+ [926] 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0
+ [963] 0 1 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0
 [1000] 0</code></pre>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>numeroAleatorio2 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1</span>, <span class="dv">100</span>, <span class="dv">500</span>);</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>numeroAleatorio2</span></code></pre></div>
-<pre><code>[1] 172.5983</code></pre>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>muestraAleatoria2 <span class="ot">&lt;-</span> <span class="fu">sample</span>(poblacion10PorcientoEnferma, numeroAleatorio2, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>muestraAleatoria2</span></code></pre></div>
-<pre><code>  [1] 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1
- [38] 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0
- [75] 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 1 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0
-[112] 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 0 0 0
-[149] 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0</code></pre>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>pEstimadorMuestraAleatoria2 <span class="ot">&lt;-</span> <span class="fu">sum</span>(muestraAleatoria2 <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="fu">length</span>(muestraAleatoria2)</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>pEstimadorMuestraAleatoria2</span></code></pre></div>
-<pre><code>[1] 0.127907</code></pre>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>pEstimadorMuestraAleatoria2 <span class="ot">&lt;-</span> <span class="fu">sum</span>(muestraAleatoria2 <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="fu">length</span>(muestraAleatoria2)</span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>pEstimadorMuestraAleatoria2</span></code></pre></div>
-<pre><code>[1] 0.127907</code></pre>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>tamanosMuestra <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">500</span>)</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>tamanosMuestra</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>numeroAleatorio2 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1</span>, <span class="dv">100</span>, <span class="dv">500</span>);</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>numeroAleatorio2</span></code></pre></div>
+<pre><code>[1] 461.603</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>muestraAleatoria2 <span class="ot">&lt;-</span> <span class="fu">sample</span>(poblacion10PorcientoEnferma, numeroAleatorio2, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>muestraAleatoria2</span></code></pre></div>
+<pre><code>  [1] 0 1 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0
+ [38] 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0
+ [75] 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 1
+[112] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0
+[149] 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 0 0 0
+[186] 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+[223] 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0
+[260] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0
+[297] 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 1 0
+[334] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+[371] 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0
+[408] 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0
+[445] 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 0</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>pEstimadorMuestraAleatoria2 <span class="ot">&lt;-</span> <span class="fu">sum</span>(muestraAleatoria2 <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="fu">length</span>(muestraAleatoria2)</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>pEstimadorMuestraAleatoria2</span></code></pre></div>
+<pre><code>[1] 0.09761388</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>pEstimadorMuestraAleatoria2 <span class="ot">&lt;-</span> <span class="fu">sum</span>(muestraAleatoria2 <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="fu">length</span>(muestraAleatoria2)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>pEstimadorMuestraAleatoria2</span></code></pre></div>
+<pre><code>[1] 0.09761388</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>tamanosMuestra <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">500</span>)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>tamanosMuestra</span></code></pre></div>
 <pre><code> [1]   5  10  15  20  30  50  60 100 200 500</code></pre>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(tamanoMuestra <span class="cf">in</span> tamanosMuestra) {</span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">Muestra tamano: &quot;</span> , tamanoMuestra, <span class="st">&#39;</span><span class="sc">\n</span><span class="st">&#39;</span>)</span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>  muestraAleatoria3 <span class="ot">&lt;-</span> <span class="fu">sample</span>(poblacion10PorcientoEnferma, tamanoMuestra, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(muestraAleatoria3)</span>
-<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>  pEstimadorMuestraAleatoria3 <span class="ot">&lt;-</span> <span class="fu">sum</span>(muestraAleatoria3 <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="fu">length</span>(muestraAleatoria3)</span>
-<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Estimador de la proporción muestral: &quot;</span>, pEstimadorMuestraAleatoria3)</span>
-<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(tamanoMuestra <span class="cf">in</span> tamanosMuestra) {</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">Muestra tamano: &quot;</span> , tamanoMuestra, <span class="st">&#39;</span><span class="sc">\n</span><span class="st">&#39;</span>)</span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  muestraAleatoria3 <span class="ot">&lt;-</span> <span class="fu">sample</span>(poblacion10PorcientoEnferma, tamanoMuestra, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(muestraAleatoria3)</span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  pEstimadorMuestraAleatoria3 <span class="ot">&lt;-</span> <span class="fu">sum</span>(muestraAleatoria3 <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="fu">length</span>(muestraAleatoria3)</span>
+<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Estimador de la proporción muestral: &quot;</span>, pEstimadorMuestraAleatoria3)</span>
+<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>
 
 Muestra tamano:  5 
-1 0 0 0 0
-Estimador de la proporción muestral:  0.2
+0 0 0 0 0
+Estimador de la proporción muestral:  0
 
 Muestra tamano:  10 
 0 0 0 0 0 0 0 0 0 0
 Estimador de la proporción muestral:  0
 
 Muestra tamano:  15 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-Estimador de la proporción muestral:  0
+0 0 0 0 0 0 0 0 0 1 0 0 0 0 0
+Estimador de la proporción muestral:  0.06666667
 
 Muestra tamano:  20 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0
-Estimador de la proporción muestral:  0.05
+0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0
+Estimador de la proporción muestral:  0.1
 
 Muestra tamano:  30 
-0 0 0 0 0 0 0 0 0 0 1 1 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0
-Estimador de la proporción muestral:  0.1333333
+0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0
+Estimador de la proporción muestral:  0.06666667
 
 Muestra tamano:  50 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0
-Estimador de la proporción muestral:  0.04
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0
+Estimador de la proporción muestral:  0.06
 
 Muestra tamano:  60 
-0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0
-Estimador de la proporción muestral:  0.1166667
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Estimador de la proporción muestral:  0.01666667
 
 Muestra tamano:  100 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-Estimador de la proporción muestral:  0.09
+0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 1 0 0 0 0 1 0 1 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 1 1 0
+Estimador de la proporción muestral:  0.18
 
 Muestra tamano:  200 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0
-Estimador de la proporción muestral:  0.07
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 1 0 0 0 0 0 1 0 0 1 0
+Estimador de la proporción muestral:  0.115
 
 Muestra tamano:  500 
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0
-Estimador de la proporción muestral:  0.11</code></pre>
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+Estimador de la proporción muestral:  0.092</code></pre>
 <p><strong> Lotes con 90% de plantas enfermas</strong></p>
 <div class="knitr-options" data-fig-width="576" data-fig-height="460">
 
 </div>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>poblacion90PorcientoEnferma <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="dv">1000</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.9</span>))</span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>poblacion90PorcientoEnferma</span></code></pre></div>
-<pre><code>   [1] 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 1 1 1 1 1 1 0 1 1 1 1 1 1
-  [38] 1 1 1 1 1 1 1 1 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0
-  [75] 0 1 1 1 0 0 1 1 1 1 0 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1
- [112] 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 0 1 1 1 0 1 1 1 1 1
- [149] 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1
- [186] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 0 1 1 1 1 0 0 1 1 1 1 1 1 1 1 0 1 1 1 1 1
- [223] 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1
- [260] 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0
- [297] 1 1 1 1 1 1 1 0 0 1 0 1 1 1 1 0 1 1 1 1 1 1 1 1 0 0 1 1 1 1 1 1 1 0 1 1 1
- [334] 1 1 1 1 1 0 1 1 1 1 1 1 1 1 0 1 0 1 1 1 1 1 0 1 1 1 1 1 1 1 0 1 1 1 1 1 1
- [371] 1 0 1 1 0 1 1 0 0 0 1 1 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1
- [408] 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 0 1 1 1 1 1 1 1 0 1 1 1 1
- [445] 1 1 1 1 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
- [482] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1
- [519] 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1
- [556] 1 1 1 1 0 1 1 1 1 0 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 0
- [593] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1
- [630] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 0 1
- [667] 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1
- [704] 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1
- [741] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 1 1 0 1 1 1 1 1 1 0 1 1 1 1
- [778] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 0 1 1 1 0 1 1 1 1 1 1 0 1 1 1 1 1 1 1
- [815] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 0 0 1 1 1 1 1 1 1
- [852] 1 0 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1
- [889] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1
- [926] 1 1 1 0 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
- [963] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 0 1 0
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>poblacion90PorcientoEnferma <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">1000</span><span class="sc">*</span><span class="fl">0.9</span>), <span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">1000</span><span class="sc">*</span><span class="fl">0.1</span>)))</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>poblacion90PorcientoEnferma</span></code></pre></div>
+<pre><code>   [1] 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1
+  [38] 1 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 1 1 1 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1
+  [75] 1 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 0 1 0 1
+ [112] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1
+ [149] 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0
+ [186] 0 1 1 1 1 1 1 1 1 1 1 1 0 1 0 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0
+ [223] 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 1 1 1 1 1 1 1 1 0 1
+ [260] 1 1 1 1 1 1 1 1 0 0 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 0 0
+ [297] 0 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 0 0 1 1 1
+ [334] 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 0 1 1 1 1 1 1
+ [371] 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1
+ [408] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 0 1 0 1 1 1 1 0
+ [445] 1 1 1 1 0 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 0 1 1
+ [482] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1
+ [519] 0 1 1 1 1 1 1 0 1 1 0 1 1 0 1 0 1 1 1 1 1 0 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1
+ [556] 1 1 1 1 1 1 1 1 1 0 1 1 1 0 1 1 1 1 1 1 1 0 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1
+ [593] 1 0 1 0 1 1 1 1 1 0 1 1 1 1 0 1 1 1 1 1 1 0 1 0 1 1 1 1 0 1 1 1 0 1 1 1 1
+ [630] 1 1 1 1 1 1 0 1 1 1 0 0 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1
+ [667] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1
+ [704] 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0
+ [741] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+ [778] 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0
+ [815] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1
+ [852] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 0 1 1 0 1 1 1 1 1 1 1 1 1 1 1
+ [889] 1 1 1 1 1 0 1 1 1 1 1 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 0 1 1 1
+ [926] 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1
+ [963] 1 0 1 1 1 1 1 1 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1
 [1000] 1</code></pre>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>numeroAleatorio2 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1</span>, <span class="dv">100</span>, <span class="dv">500</span>);</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>numeroAleatorio2</span></code></pre></div>
-<pre><code>[1] 111.8932</code></pre>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>muestraAleatoria2 <span class="ot">&lt;-</span> <span class="fu">sample</span>(poblacion90PorcientoEnferma, numeroAleatorio2, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>muestraAleatoria2</span></code></pre></div>
-<pre><code>  [1] 1 0 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1
- [38] 1 1 1 1 1 1 1 0 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
- [75] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0 1 1 1 1 0 1 1 1 1 1 1 1 1 0 1 1 1</code></pre>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>pEstimadorMuestraAleatoria2 <span class="ot">&lt;-</span> <span class="fu">sum</span>(muestraAleatoria2 <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="fu">length</span>(muestraAleatoria2)</span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>pEstimadorMuestraAleatoria2</span></code></pre></div>
-<pre><code>[1] 0.9099099</code></pre>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>pEstimadorMuestraAleatoria2 <span class="ot">&lt;-</span> <span class="fu">sum</span>(muestraAleatoria2 <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="fu">length</span>(muestraAleatoria2)</span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>pEstimadorMuestraAleatoria2</span></code></pre></div>
-<pre><code>[1] 0.9099099</code></pre>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>tamanosMuestra <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">500</span>)</span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>tamanosMuestra</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>numeroAleatorio2 <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">1</span>, <span class="dv">100</span>, <span class="dv">500</span>);</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>numeroAleatorio2</span></code></pre></div>
+<pre><code>[1] 450.0964</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>muestraAleatoria2 <span class="ot">&lt;-</span> <span class="fu">sample</span>(poblacion90PorcientoEnferma, numeroAleatorio2, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>muestraAleatoria2</span></code></pre></div>
+<pre><code>  [1] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1
+ [38] 1 1 1 1 1 1 1 1 1 1 1 1 0 0 1 1 1 1 1 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1
+ [75] 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+[112] 1 1 1 1 1 1 1 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1
+[149] 1 1 1 1 1 0 1 1 1 0 1 1 1 1 1 0 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1
+[186] 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+[223] 1 1 1 1 1 1 0 1 1 1 1 0 1 1 1 1 1 0 1 1 1 0 1 0 0 1 1 1 0 1 1 1 1 1 1 1 1
+[260] 0 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 1 1 1 0 1 1 1 1 1 0 1 1 1
+[297] 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0
+[334] 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 0 1 1 1
+[371] 1 0 1 1 1 1 1 1 0 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 0 1 1
+[408] 0 1 1 1 0 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+[445] 1 0 1 1 1 1</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>pEstimadorMuestraAleatoria2 <span class="ot">&lt;-</span> <span class="fu">sum</span>(muestraAleatoria2 <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="fu">length</span>(muestraAleatoria2)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>pEstimadorMuestraAleatoria2</span></code></pre></div>
+<pre><code>[1] 0.8977778</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>pEstimadorMuestraAleatoria2 <span class="ot">&lt;-</span> <span class="fu">sum</span>(muestraAleatoria2 <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="fu">length</span>(muestraAleatoria2)</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>pEstimadorMuestraAleatoria2</span></code></pre></div>
+<pre><code>[1] 0.8977778</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>tamanosMuestra <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">500</span>)</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>tamanosMuestra</span></code></pre></div>
 <pre><code> [1]   5  10  15  20  30  50  60 100 200 500</code></pre>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(tamanoMuestra <span class="cf">in</span> tamanosMuestra) {</span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">Muestra tamano: &quot;</span> , tamanoMuestra, <span class="st">&#39;</span><span class="sc">\n</span><span class="st">&#39;</span>)</span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a>  muestraAleatoria3 <span class="ot">&lt;-</span> <span class="fu">sample</span>(poblacion90PorcientoEnferma, tamanoMuestra, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(muestraAleatoria3)</span>
-<span id="cb51-5"><a href="#cb51-5" aria-hidden="true" tabindex="-1"></a>  pEstimadorMuestraAleatoria3 <span class="ot">&lt;-</span> <span class="fu">sum</span>(muestraAleatoria3 <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="fu">length</span>(muestraAleatoria3)</span>
-<span id="cb51-6"><a href="#cb51-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Estimador de la proporción muestral: &quot;</span>, pEstimadorMuestraAleatoria3)</span>
-<span id="cb51-7"><a href="#cb51-7" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb51-8"><a href="#cb51-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(tamanoMuestra <span class="cf">in</span> tamanosMuestra) {</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">Muestra tamano: &quot;</span> , tamanoMuestra, <span class="st">&#39;</span><span class="sc">\n</span><span class="st">&#39;</span>)</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>  muestraAleatoria3 <span class="ot">&lt;-</span> <span class="fu">sample</span>(poblacion90PorcientoEnferma, tamanoMuestra, <span class="at">replace =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(muestraAleatoria3)</span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>  pEstimadorMuestraAleatoria3 <span class="ot">&lt;-</span> <span class="fu">sum</span>(muestraAleatoria3 <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">/</span> <span class="fu">length</span>(muestraAleatoria3)</span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Estimador de la proporción muestral: &quot;</span>, pEstimadorMuestraAleatoria3)</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>
 
 Muestra tamano:  5 
-1 1 1 1 1
-Estimador de la proporción muestral:  1
+1 1 0 1 1
+Estimador de la proporción muestral:  0.8
 
 Muestra tamano:  10 
-1 1 1 1 1 1 1 0 1 1
-Estimador de la proporción muestral:  0.9
-
-Muestra tamano:  15 
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1
 Estimador de la proporción muestral:  1
 
+Muestra tamano:  15 
+1 1 1 1 1 1 1 1 1 1 1 1 0 0 0
+Estimador de la proporción muestral:  0.8
+
 Muestra tamano:  20 
-1 1 1 1 1 1 1 0 1 1 0 1 1 1 1 1 1 1 1 1
+1 1 1 0 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1
 Estimador de la proporción muestral:  0.9
 
 Muestra tamano:  30 
-1 1 0 1 1 1 1 1 0 1 1 1 0 1 0 1 0 1 1 1 0 1 1 1 1 1 1 1 1 1
-Estimador de la proporción muestral:  0.8
+1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 0 1 1 1 1 0 1
+Estimador de la proporción muestral:  0.8666667
 
 Muestra tamano:  50 
-1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1
-Estimador de la proporción muestral:  0.96
-
-Muestra tamano:  60 
-1 1 1 0 1 1 1 1 1 0 1 1 1 1 1 1 1 1 0 0 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-Estimador de la proporción muestral:  0.9166667
-
-Muestra tamano:  100 
-1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
-Estimador de la proporción muestral:  0.94
-
-Muestra tamano:  200 
-1 1 1 1 0 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 0 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 1 1 1 1 1 1 1 1 1 0 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 0 1 1 1 1 0 1 1 1 1 1 1 1 0 1 1 1 1 1
 Estimador de la proporción muestral:  0.92
 
+Muestra tamano:  60 
+1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+Estimador de la proporción muestral:  0.95
+
+Muestra tamano:  100 
+1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 0 1 0 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+Estimador de la proporción muestral:  0.91
+
+Muestra tamano:  200 
+1 1 1 1 1 1 1 0 1 0 1 0 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 0 0 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 1 1 1 1 0 1 1 1 1 0 1 1 1 1 1 1 1 0 1
+Estimador de la proporción muestral:  0.895
+
 Muestra tamano:  500 
-1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 0 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 0 1 0 0 1 1 0 1 1 0 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 0 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 0 1 1 0 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 0 0 1 1 1 1 1 1 0 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 0 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 0 1 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1
-Estimador de la proporción muestral:  0.91</code></pre>
+1 1 0 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 0 0 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 1 1 0 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 0 1 1 1 0 1 1 1 1 1 1 0 1 0 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 0 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 1 1 1 1 0 1 1 1 1 1 1 1 1 1 0 1 1 1 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 0 1 0 1
+Estimador de la proporción muestral:  0.896</code></pre>
 </div>
 </div>
 

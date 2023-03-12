@@ -13,6 +13,7 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+set.seed(7)
 ```
 
 <h1>Problema 1</h1>
@@ -35,7 +36,7 @@ Column {data-width=700 .tabset}
 
 
 ```{r}
-poblacion1 <- sample(c(0, 1), 1000, replace = TRUE, prob = c(0.5, 0.5))
+poblacion1 <- sample(c(rep(1, 1000*0.5), rep(0, 1000*0.5)))
 poblacion1
 
 
@@ -52,6 +53,7 @@ summary(poblacion1)
 
 
 ```{r}
+#El número aleatorio se usa para obtener una muestra de tamaño aleatorio.
 numeroAleatorio1 <- runif(1, 100, 1000);
 numeroAleatorio1
 muestraAleatoria1 <- sample(poblacion1, numeroAleatorio1, replace = FALSE)
@@ -71,34 +73,29 @@ pEstimadorMuestraAleatoria1
  resultados del estimador pˆ. ¿Qué tan simétricos o sesgados son los resultados obtenidos? y ¿qué se puede observar en cuanto a la variabilidad?. Realice en su informe un comentario sobre los resultados obtenidos.
  
 ```{r}
-poblacion2 <- sample(c(0, 1), 500, replace = TRUE, prob = c(0.5, 0.5))
-poblacion2
-```
+tablaEstimadores = data.frame(matrix(nrow = 0, ncol = 2))
+colnames(tablaEstimadores) = c("tamaño muestra", "estimadorP");
+for(i in 1:500) {
+  numeroAleatorio1 <- runif(1, 100, 1000);
+  muestraAleatoria1 <- sample(poblacion1, numeroAleatorio1, replace = FALSE)
+  pEstimadorMuestraAleatoria1 <- sum(muestraAleatoria1 == 1) / length(muestraAleatoria1)
+  row <- c(numeroAleatorio1,pEstimadorMuestraAleatoria1)
+  tablaEstimadores[nrow(tablaEstimadores)+1,]  = row
+}
+print(tablaEstimadores)
 
-<strong>Genere una función que permita:</strong>
-- Obtener una muestra aleatoria de la población y
-
-```{r}
-numeroAleatorio2 <- runif(1, 100, 500);
-numeroAleatorio2
-muestraAleatoria2 <- sample(poblacion2, numeroAleatorio2, replace = FALSE)
-muestraAleatoria2
-pEstimadorMuestraAleatoria2 <- sum(muestraAleatoria2 == 1) / length(muestraAleatoria2)
-pEstimadorMuestraAleatoria2
-```
-
-
-- Calcule el estimador de la proporción muestral pˆ para un tamaño de muestra dado n.
-
-```{r}
-pEstimadorMuestraAleatoria2 <- sum(muestraAleatoria2 == 1) / length(muestraAleatoria2)
-pEstimadorMuestraAleatoria2
+summary(tablaEstimadores)
 ```
 
 ¿Qué tan simétricos o sesgados son los resultados obtenidos? y ¿qué se puede observar en cuanto a la variabilidad?. Realice en su informe un comentario sobre los resultados obtenidos.
 
 <hr>
 ### c. Repetición (b) y (c) tamaño muestra
+
+
+
+
+
 <strong>d.</strong> Repita los puntos b y c para tamaños de muestra n=5, 10, 15, 20, 30, 50, 60, 100, 200, 500. Compare los resultados obtenidos para los diferentes tamaños de muestra en cuanto a la normalidad. Utilice pruebas de bondad y ajuste (shapiro wilks :shspiro.test()) y métodos gráficos (grafico de normalidad: qqnorm()). Comente ensu informe los resultados obtenidos
 
 ```{r}
@@ -108,23 +105,25 @@ tamanosMuestra
 
 for(tamanoMuestra in tamanosMuestra) {
   cat("\n\nMuestra tamano: " , tamanoMuestra, '\n')
-  muestraAleatoria3 <- sample(poblacion2, tamanoMuestra, replace = FALSE)
-  cat(muestraAleatoria3)
-  pEstimadorMuestraAleatoria3 <- sum(muestraAleatoria3 == 1) / length(muestraAleatoria3)
-  cat("\nEstimador de la proporción muestral: ", pEstimadorMuestraAleatoria3)
+  muestra <- sample(poblacion1, tamanoMuestra, replace = FALSE)
+  cat(muestra)
+  pEstimadorMuestra <- sum(muestra == 1) / length(muestra)
+  cat("\nEstimador de la proporción muestral: ", pEstimadorMuestra)
   
 }
 
 ```
 
 <hr>
+### c. Simulacion con X% plantas enfermas
 
 <strong>e.</strong> Repita toda la simulación (puntos a – d), pero ahora para lotes con 10% de plantas enfermas y de nuevo para lotes con un 90% de plantas enfermas. Concluya sobre los resultados del ejercicio.
 
-<strong> Lotes con 10% de plantas enfermas</strong>
+<strong> Lote con 10% de plantas enfermas</strong>
 
 ```{r}
-poblacion10PorcientoEnferma <- sample(c(0, 1), 1000, replace = TRUE, prob = c(0.9, 0.1))
+
+poblacion10PorcientoEnferma <- sample(c(rep(1, 1000*0.1), rep(0, 1000*0.9)))
 poblacion10PorcientoEnferma
 
 numeroAleatorio2 <- runif(1, 100, 500);
@@ -156,7 +155,7 @@ for(tamanoMuestra in tamanosMuestra) {
 <strong> Lotes con 90% de plantas enfermas</strong>
 
 ```{r}
-poblacion90PorcientoEnferma <- sample(c(0, 1), 1000, replace = TRUE, prob = c(0.1, 0.9))
+poblacion90PorcientoEnferma <- sample(c(rep(1, 1000*0.9), rep(0, 1000*0.1)))
 poblacion90PorcientoEnferma
 
 numeroAleatorio2 <- runif(1, 100, 500);
