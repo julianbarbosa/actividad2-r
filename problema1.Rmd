@@ -85,12 +85,13 @@ for(i in 1:500) {
 print(tablaEstimadores)
 
 summary(tablaEstimadores)
+
+desviacionEstandar <- sd(tablaEstimadores$"estimador")
+cat("La desviación estandar es de ",desviacionEstandar)
 ```
 
-¿Qué tan simétricos o sesgados son los resultados obtenidos? y ¿qué se puede observar en cuanto a la variabilidad?. Realice en su informe un comentario sobre los resultados obtenidos.
-
 <hr>
-### c. Repetición (b) y (c) tamaño muestra
+### d. Repetición (b) y (c) tamaño muestra
 
 
 
@@ -109,13 +110,19 @@ for(tamanoMuestra in tamanosMuestra) {
   cat(muestra)
   pEstimadorMuestra <- sum(muestra == 1) / length(muestra)
   cat("\nEstimador de la proporción muestral: ", pEstimadorMuestra)
-  
+  print(shapiro.test(muestra))
+
 }
+for(tamanoMuestra in tamanosMuestra) {
+  muestra <- sample(poblacion1, tamanoMuestra, replace = FALSE)
+  qqnorm(muestra, main=paste0("Tamaño Muestra =", tamanoMuestra))
+}
+  
 
 ```
 
 <hr>
-### c. Simulacion con X% plantas enfermas
+### e. Simulacion con X% plantas enfermas
 
 <strong>e.</strong> Repita toda la simulación (puntos a – d), pero ahora para lotes con 10% de plantas enfermas y de nuevo para lotes con un 90% de plantas enfermas. Concluya sobre los resultados del ejercicio.
 
@@ -146,7 +153,12 @@ for(tamanoMuestra in tamanosMuestra) {
   cat(muestraAleatoria3)
   pEstimadorMuestraAleatoria3 <- sum(muestraAleatoria3 == 1) / length(muestraAleatoria3)
   cat("\nEstimador de la proporción muestral: ", pEstimadorMuestraAleatoria3)
-  
+  print(shapiro.test(muestra))
+}
+
+for(tamanoMuestra in tamanosMuestra) {
+  muestra <- sample(poblacion10PorcientoEnferma, tamanoMuestra, replace = FALSE)
+  qqnorm(muestra, main=paste0("Tamaño Muestra =", tamanoMuestra))
 }
 
 ```
@@ -178,8 +190,14 @@ for(tamanoMuestra in tamanosMuestra) {
   cat(muestraAleatoria3)
   pEstimadorMuestraAleatoria3 <- sum(muestraAleatoria3 == 1) / length(muestraAleatoria3)
   cat("\nEstimador de la proporción muestral: ", pEstimadorMuestraAleatoria3)
-  
+  print(shapiro.test(muestra))
 }
+
+for(tamanoMuestra in tamanosMuestra) {
+  muestra <- sample(poblacion90PorcientoEnferma, tamanoMuestra, replace = FALSE)
+  qqnorm(muestra, main=paste0("Tamaño Muestra =", tamanoMuestra))
+}
+  
 
 ```
 
